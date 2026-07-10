@@ -17,14 +17,16 @@ const allDirectoryStops = shops.filter(s => s.passportType === 'directory')
 export default function RouteFilter() {
   const [activeFilter, setActiveFilter] = useState<string>('coffee')
 
+  const isAll = activeFilter === 'all'
+
   const filteredCore = useMemo(
-    () => allCoreStops.filter(s => s.layers?.includes(activeFilter)),
-    [activeFilter]
+    () => isAll ? allCoreStops : allCoreStops.filter(s => s.layers?.includes(activeFilter)),
+    [activeFilter, isAll]
   )
 
   const filteredDirectory = useMemo(
-    () => allDirectoryStops.filter(s => s.layers?.includes(activeFilter)),
-    [activeFilter]
+    () => isAll ? allDirectoryStops : allDirectoryStops.filter(s => s.layers?.includes(activeFilter)),
+    [activeFilter, isAll]
   )
 
   const activeLayer = layers.find((l: any) => l.id === activeFilter)
@@ -81,7 +83,7 @@ export default function RouteFilter() {
 
       {/* Filter pills */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {layers.map((layer: any) => {
+        {[{ id: 'all', label: 'All', icon: '15', color: '#10222F' }, ...layers].map((layer: any) => {
           const active = activeFilter === layer.id
           return (
             <button
@@ -108,7 +110,7 @@ export default function RouteFilter() {
       {filteredCore.length > 0 && (
         <>
           <p className="font-mono text-[11px] tracking-widest text-[var(--navy-mid)] opacity-80 uppercase mb-4 border-l-2 border-[var(--gold)]/40 pl-3">
-            {activeLayer?.label ?? 'The Route'}
+            {isAll ? 'The Route' : (activeLayer?.label ?? 'The Route')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             {filteredCore.map(s => stopCard(s, true))}
