@@ -18,10 +18,13 @@ const coreStops = shops
   .sort((a, b) => a.passportStop - b.passportStop)
 
 const zoneLabel: Record<string, string> = {
-  design: 'Design District',
-  fifth:  'Fifth Avenue South',
-  third:  'Third Street South',
-  bay:    'Naples Bay',
+  design: 'PLACEHOLDER_DISTRICT_LABEL',
+  fifth:  'PLACEHOLDER_STREET_A_FULL',
+  third:  'PLACEHOLDER_STREET_B_FULL',
+  bay:    'PLACEHOLDER_WATERFRONT_LABEL',
+  downtown: 'PLACEHOLDER_DOWNTOWN_LABEL',
+  boardwalk: 'Boardwalk',
+  'springwood-west-side': 'Springwood / West Side',
 }
 
 export default function StopPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -63,14 +66,14 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
   if (!shop) {
     return (
-      <main className="min-h-screen bg-[#f5f0e8] flex items-center justify-center">
+      <main className="min-h-screen bg-[var(--cream)] flex items-center justify-center">
         <div className="text-center px-6">
-          <p className="font-serif text-2xl text-[#0d1f3c] mb-4">Stop not found</p>
+          <p className="font-serif text-2xl text-[var(--navy)] mb-4">Stop not found</p>
           <Link
             href="/passport"
-            className="font-mono text-sm text-[#1a3560] underline underline-offset-4"
+            className="font-mono text-sm text-[var(--navy-mid)] underline underline-offset-4"
           >
-            ← Back to Passport
+            ← Back to Postcards
           </Link>
         </div>
       </main>
@@ -108,7 +111,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
   const storyNeedsExpand = storyBody.length > 120
 
   return (
-    <main className="min-h-screen bg-[#f5f0e8] text-[#0d1f3c]">
+    <main className="min-h-screen bg-[var(--cream)] text-[var(--navy)]">
 
       {/* {phoneLoaded && !phone && (
         <PhoneModal onSave={savePhone} />
@@ -119,7 +122,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
         className="px-6 py-14 text-center border-b-4"
         style={{
           backgroundColor: shop.selloColor,
-          borderBottomColor: '#c9a060',
+          borderBottomColor: 'var(--gold)',
         }}
       >
         <Link
@@ -157,15 +160,15 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
         {!stamped ? (
           <button
             onClick={handleStamp}
-            className="w-full py-4 bg-[#0d1f3c] text-[#f5f0e8] text-center
+            className="w-full py-4 bg-[var(--navy)] text-[var(--cream)] text-center
                        font-mono text-sm tracking-widest uppercase rounded-sm
-                       shadow-[3px_3px_0_#c9a060] hover:translate-x-[-1px]
-                       hover:translate-y-[-1px] hover:shadow-[4px_4px_0_#c9a060]
+                       shadow-[3px_3px_0_var(--gold)] hover:translate-x-[-1px]
+                       hover:translate-y-[-1px] hover:shadow-[4px_4px_0_var(--gold)]
                        active:translate-x-[1px] active:translate-y-[1px]
-                       active:shadow-[1px_1px_0_#c9a060]
+                       active:shadow-[1px_1px_0_var(--gold)]
                        transition-all"
           >
-            Collect This Stamp
+            Collect This Postmark
           </button>
         ) : (
           <div
@@ -185,16 +188,16 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               <span className="text-white text-3xl">✓</span>
             </div>
 
-            <p className="font-serif text-lg font-bold text-[#0d1f3c]">
+            <p className="font-serif text-lg font-bold text-[var(--navy)]">
               {shop.stamp.welcomeLine}
             </p>
-            <p className="font-serif italic text-sm text-[#1a3560] mt-1 leading-relaxed">
+            <p className="font-serif italic text-sm text-[var(--navy-mid)] mt-1 leading-relaxed">
               {shop.stamp.subLine}
             </p>
 
             {stamps[slug] && (
-              <p className="font-mono text-[10px] text-[#1a3560] opacity-50 mt-3">
-                Stamped {new Date(stamps[slug]).toLocaleDateString('en-US', {
+              <p className="font-mono text-[10px] text-[var(--navy-mid)] opacity-50 mt-3">
+                Postmarked {new Date(stamps[slug]).toLocaleDateString('en-US', {
                   weekday: 'long',
                   month: 'long',
                   day: 'numeric',
@@ -206,25 +209,25 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
         {/* STORY */}
         <div className="mt-8">
-          <h2 className="font-serif text-xl font-bold text-[#0d1f3c] leading-snug">
+          <h2 className="font-serif text-xl font-bold text-[var(--navy)] leading-snug">
             {shop.story.headline}
           </h2>
 
           <div className="relative mt-3">
-            <p className="font-serif text-base text-[#0d1f3c] leading-relaxed transition-all duration-500">
+            <p className="font-serif text-base text-[var(--navy)] leading-relaxed transition-all duration-500">
               {showFullStory || !storyNeedsExpand ? storyBody : `${storyPreview}…`}
             </p>
 
             {!showFullStory && storyNeedsExpand && (
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#f5f0e8] to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[var(--cream)] to-transparent" />
             )}
           </div>
 
           {storyNeedsExpand && (
             <button
               onClick={() => setShowFullStory(v => !v)}
-              className="mt-2 font-mono text-xs text-[#1a3560] underline underline-offset-4
-                         hover:text-[#0d1f3c] transition-colors"
+              className="mt-2 font-mono text-xs text-[var(--navy-mid)] underline underline-offset-4
+                         hover:text-[var(--navy)] transition-colors"
             >
               {showFullStory ? 'Show less' : 'Read more'}
             </button>
@@ -233,11 +236,11 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
         {/* INSIDER TIP */}
         {shop.story.insiderTip && (
-          <div className="mt-6 p-4 bg-[#e8e2d4] border border-[#1a3560]/20 rounded-sm">
-            <p className="font-mono text-[10px] tracking-widest text-[#1a3560] opacity-60 uppercase mb-1">
+          <div className="mt-6 p-4 bg-[color-mix(in srgb, var(--cream) 85%, var(--navy) 15%)] border border-[var(--navy-mid)]/20 rounded-sm">
+            <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-60 uppercase mb-1">
               Insider Tip
             </p>
-            <p className="font-serif italic text-sm text-[#0d1f3c] leading-relaxed">
+            <p className="font-serif italic text-sm text-[var(--navy)] leading-relaxed">
               {shop.story.insiderTip}
             </p>
           </div>
@@ -246,10 +249,10 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
         {/* HOURS */}
         <div className="mt-6">
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-widest text-[#1a3560] opacity-60 uppercase">
+            <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-60 uppercase">
               Hours
             </p>
-            <div className="flex-1 border-t border-dashed border-[#1a3560] opacity-20" />
+            <div className="flex-1 border-t border-dashed border-[var(--navy-mid)] opacity-20" />
           </div>
 
           <div className="flex flex-col gap-1">
@@ -265,13 +268,13 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
                   ${isToday ? 'bg-white/70 font-bold' : 'bg-white/30'}
                 `}>
                   <span className={`font-mono text-xs uppercase
-                    ${isToday ? 'text-[#0d1f3c]' : 'text-[#1a3560] opacity-60'}
+                    ${isToday ? 'text-[var(--navy)]' : 'text-[var(--navy-mid)] opacity-60'}
                   `}>
                     {isToday ? '→ ' : ''}{dayLabels[day]}
                   </span>
                   <span className={`font-mono text-xs
                     ${closed ? 'text-[#b5451b] opacity-60' :
-                      isToday ? 'text-[#0d1f3c]' : 'text-[#0d1f3c] opacity-80'}
+                      isToday ? 'text-[var(--navy)]' : 'text-[var(--navy)] opacity-80'}
                   `}>
                     {closed ? 'Closed' : val}
                   </span>
@@ -281,7 +284,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
           </div>
 
           {shop.hours.note && (
-            <p className="font-serif italic text-xs text-[#1a3560] opacity-60 mt-2">
+            <p className="font-serif italic text-xs text-[var(--navy-mid)] opacity-60 mt-2">
               {shop.hours.note}
             </p>
           )}
@@ -289,7 +292,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
         {/* PARKING */}
         {shop.story.parkingNote && (
-          <p className="font-mono text-[10px] text-[#1a3560] opacity-50 mt-3">
+          <p className="font-mono text-[10px] text-[var(--navy-mid)] opacity-50 mt-3">
             🅿 {shop.story.parkingNote}
           </p>
         )}
@@ -299,33 +302,33 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
           <div className="mt-8">
             <button
               onClick={() => { setShowTrivia(!showTrivia); setShowAnswer(false) }}
-              className="w-full text-left p-4 bg-white/50 border border-[#1a3560]/20
+              className="w-full text-left p-4 bg-white/50 border border-[var(--navy-mid)]/20
                          rounded-sm hover:bg-white/70 transition-all"
             >
-              <p className="font-mono text-[10px] tracking-widest text-[#1a3560] opacity-60 uppercase mb-1">
+              <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-60 uppercase mb-1">
                 ☕ Local Trivia
               </p>
-              <p className="font-serif text-sm font-bold text-[#0d1f3c]">
+              <p className="font-serif text-sm font-bold text-[var(--navy)]">
                 {showTrivia ? 'Hide question' : 'Tap to reveal a question about this stop'}
               </p>
             </button>
 
             {showTrivia && (
-              <div className="mt-3 p-4 bg-white/70 border border-[#1a3560]/20 rounded-sm">
-                <p className="font-serif text-sm text-[#0d1f3c] leading-relaxed">
+              <div className="mt-3 p-4 bg-white/70 border border-[var(--navy-mid)]/20 rounded-sm">
+                <p className="font-serif text-sm text-[var(--navy)] leading-relaxed">
                   {shopTrivia.question}
                 </p>
                 {!showAnswer ? (
                   <button
                     onClick={() => setShowAnswer(true)}
-                    className="mt-3 font-mono text-xs text-[#1a3560] underline
-                               underline-offset-4 hover:text-[#0d1f3c] transition-colors"
+                    className="mt-3 font-mono text-xs text-[var(--navy-mid)] underline
+                               underline-offset-4 hover:text-[var(--navy)] transition-colors"
                   >
                     Show answer
                   </button>
                 ) : (
-                  <div className="mt-3 pt-3 border-t border-dashed border-[#1a3560]/20">
-                    <p className="font-serif italic text-sm text-[#1a3560] leading-relaxed">
+                  <div className="mt-3 pt-3 border-t border-dashed border-[var(--navy-mid)]/20">
+                    <p className="font-serif italic text-sm text-[var(--navy-mid)] leading-relaxed">
                       {shopTrivia.answer}
                     </p>
                   </div>
@@ -342,8 +345,8 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               href={`https://${shop.website}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-[#1a3560] underline underline-offset-4
-                         hover:text-[#0d1f3c] transition-colors"
+              className="font-mono text-xs text-[var(--navy-mid)] underline underline-offset-4
+                         hover:text-[var(--navy)] transition-colors"
             >
               Website ↗
             </a>
@@ -353,8 +356,8 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               href={`https://instagram.com/${shop.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-[#1a3560] underline underline-offset-4
-                         hover:text-[#0d1f3c] transition-colors"
+              className="font-mono text-xs text-[var(--navy-mid)] underline underline-offset-4
+                         hover:text-[var(--navy)] transition-colors"
             >
               Instagram ↗
             </a>
@@ -364,8 +367,8 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               href={`https://www.google.com/maps/place/?q=place_id:${shop.placeId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-[#1a3560] underline underline-offset-4
-                         hover:text-[#0d1f3c] transition-colors"
+              className="font-mono text-xs text-[var(--navy-mid)] underline underline-offset-4
+                         hover:text-[var(--navy)] transition-colors"
             >
               Directions ↗
             </a>
@@ -378,7 +381,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
             if (navigator.share) {
               navigator.share({
                 title: shop.name,
-                text: `I just stamped ${shop.name} on the Old Naples Passport.`,
+                text: `I just collected a postmark at ${shop.name} on the Old Asbury Park Postmarks.`,
                 url: window.location.href,
               })
             } else {
@@ -386,9 +389,9 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               alert('Link copied!')
             }
           }}
-          className="mt-4 w-full py-3 border border-[#1a3560]/30
+          className="mt-4 w-full py-3 border border-[var(--navy-mid)]/30
                      rounded-sm font-mono text-xs tracking-widest
-                     uppercase text-[#1a3560] hover:bg-white/50
+                     uppercase text-[var(--navy-mid)] hover:bg-white/50
                      transition-all"
         >
           Share This Stop
@@ -400,11 +403,11 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
             {/* Corridor crossing callout */}
             {corridorCrossing && (
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex-1 h-px bg-[#c9a060] opacity-40" />
-                <span className="font-mono text-[10px] text-[#c9a060] tracking-widest px-2">
-                  You crossed to 3rd Street
+                <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
+                <span className="font-mono text-[10px] text-[var(--gold)] tracking-widest px-2">
+                  PLACEHOLDER_ROUTE_CROSSING_COPY
                 </span>
-                <div className="flex-1 h-px bg-[#c9a060] opacity-40" />
+                <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
               </div>
             )}
 
@@ -412,13 +415,13 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               {prevStop ? (
                 <Link
                   href={`/stop/${prevStop.id}`}
-                  className="flex-1 p-3 bg-white/50 border border-[#1a3560]/20 rounded-sm
+                  className="flex-1 p-3 bg-white/50 border border-[var(--navy-mid)]/20 rounded-sm
                              hover:bg-white/80 transition-all text-center"
                 >
-                  <p className="font-mono text-[9px] text-[#1a3560] opacity-50 uppercase">
+                  <p className="font-mono text-[9px] text-[var(--navy-mid)] opacity-50 uppercase">
                     ← Stop {prevStop.passportStop}
                   </p>
-                  <p className="font-serif text-xs font-bold text-[#0d1f3c] mt-0.5 truncate">
+                  <p className="font-serif text-xs font-bold text-[var(--navy)] mt-0.5 truncate">
                     {prevStop.name}
                   </p>
                 </Link>
@@ -429,27 +432,27 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               {nextStop ? (
                 <Link
                   href={`/stop/${nextStop.id}`}
-                  className="flex-1 p-3 bg-white/50 border border-[#1a3560]/20 rounded-sm
+                  className="flex-1 p-3 bg-white/50 border border-[var(--navy-mid)]/20 rounded-sm
                              hover:bg-white/80 transition-all text-center"
                 >
-                  <p className="font-mono text-[9px] text-[#1a3560] opacity-50 uppercase">
+                  <p className="font-mono text-[9px] text-[var(--navy-mid)] opacity-50 uppercase">
                     Stop {nextStop.passportStop} →
                   </p>
-                  <p className="font-serif text-xs font-bold text-[#0d1f3c] mt-0.5 truncate">
+                  <p className="font-serif text-xs font-bold text-[var(--navy)] mt-0.5 truncate">
                     {nextStop.name}
                   </p>
                 </Link>
               ) : (
                 <Link
                   href="/passport"
-                  className="flex-1 p-3 bg-[#0d1f3c] rounded-sm
-                             hover:bg-[#1a3560] transition-all text-center"
+                  className="flex-1 p-3 bg-[var(--navy)] rounded-sm
+                             hover:bg-[var(--navy-mid)] transition-all text-center"
                 >
-                  <p className="font-mono text-[9px] text-[#c9a060] opacity-70 uppercase">
+                  <p className="font-mono text-[9px] text-[var(--gold)] opacity-70 uppercase">
                     Walk to the water →
                   </p>
-                  <p className="font-serif text-xs font-bold text-[#f5f0e8] mt-0.5">
-                    View Passport →
+                  <p className="font-serif text-xs font-bold text-[var(--cream)] mt-0.5">
+                    View Postcards →
                   </p>
                 </Link>
               )}
@@ -460,13 +463,13 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
       </div>
 
       {/* FOOTER */}
-      <div className="bg-[#0d1f3c] px-6 py-6 text-center border-t-2 border-[#c9a060]">
+      <div className="bg-[var(--navy)] px-6 py-6 text-center border-t-2 border-[var(--gold)]">
         <Link
           href="/passport"
-          className="font-mono text-xs text-[#c9a060] opacity-60
+          className="font-mono text-xs text-[var(--gold)] opacity-60
                      hover:opacity-100 transition-opacity tracking-widest uppercase"
         >
-          ← Back to Passport
+          ← Back to Postcards
         </Link>
       </div>
 

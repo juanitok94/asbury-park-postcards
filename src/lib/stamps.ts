@@ -1,8 +1,9 @@
 // /src/lib/stamps.ts
-// localStorage wrapper for passport stamp state.
-// Stamps are stored as { [shopId]: ISO timestamp }.
+// localStorage wrapper for postmark state.
+// Internal stamp naming is preserved for now; values are { [shopId]: ISO timestamp }.
 
-const STORAGE_KEY = 'haywood-hoppers-stamps'
+const STORAGE_KEY = 'asbury-park-postmarks:postmarks'
+const LAST_POSTMARK_DATE_KEY = 'asbury-park-postmarks:last-postmark-date'
 
 export type StampRecord = Record<string, string> // shopId → ISO date
 
@@ -49,10 +50,10 @@ export function recordStampDate(): void {
   const today = new Date().toLocaleDateString('en-US', {
     month: 'long', day: 'numeric', year: 'numeric',
   })
-  localStorage.setItem('last-stamp-date', today)
+  localStorage.setItem(LAST_POSTMARK_DATE_KEY, today)
 }
 
 export function getLastStampDate(): string | null {
   if (typeof window === 'undefined') return null
-  return localStorage.getItem('last-stamp-date')
+  return localStorage.getItem(LAST_POSTMARK_DATE_KEY)
 }

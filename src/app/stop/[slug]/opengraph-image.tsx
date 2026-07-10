@@ -15,7 +15,7 @@ export async function generateImageMetadata({
   return [
     {
       id: 'og',
-      alt: shop ? `Stop ${shop.passportStop} — ${shop.name}` : 'Naples, Florida Passport',
+      alt: shop ? `Postmark ${shop.passportStop ?? ''} - ${shop.name}` : 'Asbury Park Postmarks',
     },
   ]
 }
@@ -30,17 +30,16 @@ export default async function Image({
   const shop = shops.find(s => s.id === slug)
 
   const stopNumber = shop?.passportStop ?? ''
-  const stopName = shop?.name ?? 'Naples, Florida'
+  const stopName = shop?.name ?? 'Asbury Park Postmarks'
   const stopAddress = shop?.address ?? ''
   const stopZone = shop?.zone ?? ''
-  const selloColor = shop?.selloColor ?? '#c9a060'
+  const selloColor = shop?.selloColor ?? '#E8543F'
   const headline = shop?.story?.headline ?? ''
 
   const zoneLabel: Record<string, string> = {
-    design: 'Design District',
-    fifth: 'Fifth Avenue South',
-    third: 'Third Street South',
-    bay: 'Naples Bay',
+    downtown: 'PLACEHOLDER_DOWNTOWN_LABEL',
+    boardwalk: 'Boardwalk',
+    'springwood-west-side': 'Springwood / West Side',
   }
 
   return new ImageResponse(
@@ -51,20 +50,12 @@ export default async function Image({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#0d1f3c',
+          backgroundColor: '#10222F',
           padding: '0',
         }}
       >
-        {/* Gold top accent bar */}
-        <div
-          style={{
-            height: '6px',
-            backgroundColor: '#c9a060',
-            display: 'flex',
-          }}
-        />
+        <div style={{ height: '6px', backgroundColor: '#E8543F', display: 'flex' }} />
 
-        {/* Main content area */}
         <div
           style={{
             flex: 1,
@@ -75,7 +66,6 @@ export default async function Image({
             alignItems: 'center',
           }}
         >
-          {/* Left: stop number circle */}
           <div
             style={{
               width: '140px',
@@ -100,37 +90,27 @@ export default async function Image({
             </span>
           </div>
 
-          {/* Right: stop details */}
-          <div
-            style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-            }}
-          >
-            {/* Zone label */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <div
               style={{
                 fontFamily: 'monospace',
                 fontSize: '18px',
                 letterSpacing: '0.25em',
-                color: '#c9a060',
+                color: '#E8543F',
                 textTransform: 'uppercase',
                 marginBottom: '16px',
-                opacity: 0.7,
+                opacity: 0.8,
                 display: 'flex',
               }}
             >
-              {zoneLabel[stopZone] ?? stopZone} · Stop {stopNumber} of 10
+              {zoneLabel[stopZone] ?? stopZone} · Postmark {stopNumber || 'PLACEHOLDER'}
             </div>
 
-            {/* Stop name */}
             <div
               style={{
                 fontSize: stopName.length > 20 ? '56px' : '72px',
                 fontWeight: 900,
-                color: '#f5f0e8',
+                color: '#F4EBDA',
                 lineHeight: 1.05,
                 marginBottom: '20px',
                 display: 'flex',
@@ -139,13 +119,12 @@ export default async function Image({
               {stopName}
             </div>
 
-            {/* Address */}
             <div
               style={{
                 fontFamily: 'monospace',
                 fontSize: '22px',
-                color: '#c9a060',
-                opacity: 0.6,
+                color: '#4FA89B',
+                opacity: 0.8,
                 marginBottom: '20px',
                 display: 'flex',
               }}
@@ -153,15 +132,14 @@ export default async function Image({
               {stopAddress}
             </div>
 
-            {/* Headline from story */}
             {headline ? (
               <div
                 style={{
                   fontFamily: 'serif',
                   fontSize: '26px',
                   fontStyle: 'italic',
-                  color: '#f5f0e8',
-                  opacity: 0.55,
+                  color: '#F4EBDA',
+                  opacity: 0.65,
                   display: 'flex',
                 }}
               >
@@ -171,11 +149,10 @@ export default async function Image({
           </div>
         </div>
 
-        {/* Footer bar */}
         <div
           style={{
             height: '72px',
-            backgroundColor: '#0a1828',
+            backgroundColor: '#0A1620',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -184,34 +161,34 @@ export default async function Image({
             paddingRight: '72px',
             borderTopWidth: '2px',
             borderTopStyle: 'solid',
-            borderTopColor: '#c9a060',
+            borderTopColor: '#E8543F',
           }}
         >
           <div
             style={{
               fontFamily: 'monospace',
               fontSize: '16px',
-              color: '#c9a060',
+              color: '#E8543F',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              opacity: 0.7,
+              opacity: 0.8,
               display: 'flex',
             }}
           >
-            Naples, Florida — A Strolling Guide
+            Asbury Park Postmarks
           </div>
           <div
             style={{
               fontFamily: 'monospace',
               fontSize: '14px',
-              color: '#c9a060',
-              opacity: 0.4,
+              color: '#4FA89B',
+              opacity: 0.7,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               display: 'flex',
             }}
           >
-            Peachy Kean DevOps
+            PLACEHOLDER_OG_FOOTER
           </div>
         </div>
       </div>

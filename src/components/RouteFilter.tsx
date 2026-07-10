@@ -32,8 +32,8 @@ export default function RouteFilter() {
   )
 
   const sectionLabel = useMemo(() => {
-    if (activeFilter === 'morning') return 'MORNING — FIFTH AVENUE + THIRD STREET'
-    return 'EVENING — FIFTH AVENUE'
+    if (activeFilter === 'morning') return 'PLACEHOLDER_CORE_ROUTE_LABEL'
+    return 'PLACEHOLDER_EVENING_ROUTE_LABEL'
   }, [activeFilter])
 
   const showDining = ['lunch', 'dinner', 'dessert'].includes(activeFilter)
@@ -49,26 +49,26 @@ export default function RouteFilter() {
         <span
           className="w-9 h-9 rounded-full flex items-center justify-center
                      text-white text-xs font-mono font-bold flex-shrink-0"
-          style={{ backgroundColor: shop.selloColor || '#1a3560' }}
+          style={{ backgroundColor: shop.selloColor || 'var(--navy-mid)' }}
         >
           {shop.passportStop ?? '✦'}
         </span>
         <div className="flex-1 min-w-0">
-          <p className="font-serif font-bold text-[#0d1f3c] text-base truncate">{shop.name}</p>
-          <p className="font-mono text-[11px] text-[#1a3560] opacity-80">{shop.address}</p>
+          <p className="font-serif font-bold text-[var(--navy)] text-base truncate">{shop.name}</p>
+          <p className="font-mono text-[11px] text-[var(--navy-mid)] opacity-80">{shop.address}</p>
           {!linked && shop.story?.insiderTip && (
-            <p className="font-serif italic text-xs text-[#1a3560] opacity-60 mt-1 leading-relaxed line-clamp-2">
+            <p className="font-serif italic text-xs text-[var(--navy-mid)] opacity-60 mt-1 leading-relaxed line-clamp-2">
               {shop.story.insiderTip}
             </p>
           )}
         </div>
         {linked && (
-          <span className="text-[#1a3560] text-lg opacity-40 group-hover:opacity-70 transition-all">›</span>
+          <span className="text-[var(--navy-mid)] text-lg opacity-40 group-hover:opacity-70 transition-all">›</span>
         )}
       </>
     )
 
-    const base = `flex items-start gap-3 p-4 bg-white/70 border border-[#1a3560]/20
+    const base = `flex items-start gap-3 p-4 bg-white/70 border border-[var(--navy-mid)]/20
                   rounded-sm shadow-[0_2px_8px_rgba(13,31,60,0.08)] transition-all duration-200`
 
     return linked ? (
@@ -89,8 +89,8 @@ export default function RouteFilter() {
   return (
     <div className="max-w-2xl mx-auto px-6 pb-6">
       <div className="flex items-center gap-3 mb-5">
-        <h3 className="font-serif text-2xl font-bold text-[#0d1f3c]">The Route</h3>
-        <div className="flex-1 border-t border-dashed border-[#1a3560] opacity-30" />
+        <h3 className="font-serif text-2xl font-bold text-[var(--navy)]">The Route</h3>
+        <div className="flex-1 border-t border-dashed border-[var(--navy-mid)] opacity-30" />
       </div>
 
       {/* Filter pills */}
@@ -105,8 +105,8 @@ export default function RouteFilter() {
                 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono
                 transition-all border
                 ${active
-                  ? 'bg-[#0d1f3c] text-[#c9a060] border-[#0d1f3c]'
-                  : 'bg-transparent border-[#1a3560]/20 text-[#1a3560] opacity-50 hover:opacity-80'
+                  ? 'bg-[var(--navy)] text-[var(--gold)] border-[var(--navy)]'
+                  : 'bg-transparent border-[var(--navy-mid)]/20 text-[var(--navy-mid)] opacity-50 hover:opacity-80'
                 }
               `}
             >
@@ -120,7 +120,7 @@ export default function RouteFilter() {
       {/* Core stops */}
       {filteredCore.length > 0 && (
         <>
-          <p className="font-mono text-[11px] tracking-widest text-[#1a3560] opacity-80 uppercase mb-4 border-l-2 border-[#c9a060]/40 pl-3">
+          <p className="font-mono text-[11px] tracking-widest text-[var(--navy-mid)] opacity-80 uppercase mb-4 border-l-2 border-[var(--gold)]/40 pl-3">
             {sectionLabel}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
@@ -131,15 +131,15 @@ export default function RouteFilter() {
 
       {/* Empty core state */}
       {filteredCore.length === 0 && (
-        <p className="font-serif italic text-[#1a3560] opacity-60 text-sm py-2">
-          The ten passport stops are morning and evening. Also on the corridor:
+        <p className="font-serif italic text-[var(--navy-mid)] opacity-60 text-sm py-2">
+          PLACEHOLDER_EMPTY_ROUTE_FILTER_COPY
         </p>
       )}
 
       {/* Directory — appears for Lunch / Dinner / Dessert */}
       {showDining && filteredDirectory.length > 0 && (
         <div className="mt-6">
-          <p className="font-mono text-[11px] tracking-widest text-[#1a3560] opacity-80 uppercase mb-4 border-l-2 border-[#c9a060]/40 pl-3">
+          <p className="font-mono text-[11px] tracking-widest text-[var(--navy-mid)] opacity-80 uppercase mb-4 border-l-2 border-[var(--gold)]/40 pl-3">
             Also on the Corridor
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

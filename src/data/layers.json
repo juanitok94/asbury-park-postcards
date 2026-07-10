@@ -1,56 +1,29 @@
 [
   {
-    "id": "coffee",
-    "label": "Coffee",
-    "color": "#0d1f3c",
-    "bg": "#f5f0e8",
-    "icon": "☕",
+    "id": "postmark",
+    "label": "Postmarks",
+    "color": "#E8543F",
+    "bg": "#F4EBDA",
+    "icon": "PM",
     "passportLayer": true,
-    "description": "Coffee stops on the corridor"
+    "description": "PLACEHOLDER_CORE_POSTMARK_LAYER_DESCRIPTION"
   },
   {
-    "id": "tea",
-    "label": "Tea",
-    "color": "#c9a060",
-    "bg": "#fdf6e8",
-    "icon": "🍵",
+    "id": "boardwalk",
+    "label": "Boardwalk",
+    "color": "#4FA89B",
+    "bg": "#F4EBDA",
+    "icon": "BW",
     "passportLayer": false,
-    "description": "Tea rooms and lounges"
+    "description": "PLACEHOLDER_BOARDWALK_BONUS_LAYER_DESCRIPTION"
   },
   {
-    "id": "bakery",
-    "label": "Bakery",
-    "color": "#b5451b",
-    "bg": "#faeee8",
-    "icon": "🥐",
+    "id": "history",
+    "label": "Springwood / West Side",
+    "color": "#10222F",
+    "bg": "#F4EBDA",
+    "icon": "H",
     "passportLayer": false,
-    "description": "Artisan bakeries and pastry shops"
-  },
-  {
-    "id": "restaurant",
-    "label": "Restaurant",
-    "color": "#1a3560",
-    "bg": "#e8ecf5",
-    "icon": "🍽",
-    "passportLayer": false,
-    "description": "Evening dining on Fifth Avenue South"
-  },
-  {
-    "id": "dessert",
-    "label": "Dessert",
-    "color": "#d4ac0d",
-    "bg": "#fdf6e8",
-    "icon": "🍦",
-    "passportLayer": false,
-    "description": "Gelato and dessert stops"
-  },
-  {
-    "id": "market",
-    "label": "Market",
-    "color": "#2a6b3a",
-    "bg": "#eaf5ec",
-    "icon": "🌿",
-    "passportLayer": false,
-    "description": "Farmers market — Saturdays only"
+    "description": "PLACEHOLDER_READ_ONLY_HISTORY_LAYER_DESCRIPTION"
   }
 ]

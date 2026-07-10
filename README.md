@@ -1,27 +1,22 @@
-# Naples, Florida — A Strolling Guide
+# Asbury Park Postmarks
 
-Ten stops. Two streets. Stroll the corridor.
+Collect postcards around Asbury Park. Postmarks confirm visits.
 
 ## What this is
 
-A warmly narrated strolling guide and passport game for Fifth Avenue South
-and Third Street South in Old Naples, Florida. Collect stamps at each of
-the 10 core stops — coffee, tea, pastries, books, a garden cafe, and a
-diner on the bay. Built by Peachy Kean DevOps, LLC.
+A mobile-first postcard collection foundation for Asbury Park, NJ. Final route data, stop copy, hours, coordinates, history notes, websites, and social handles are pending and intentionally represented as `PLACEHOLDER` strings.
 
 ## Stack
 
-- Next.js 16 (Turbopack)
+- Next.js 16
 - TypeScript
 - Tailwind CSS 4
 - Static JSON data layer
-- localStorage for stamp state
+- localStorage for postmark state
 
 ## Run locally
 
 ```bash
-git clone https://github.com/juanitok94/naples-pass.git
-cd naples-pass
 npm install
 npm run dev
 ```
@@ -30,20 +25,17 @@ Open http://localhost:3000
 
 ## Data
 
-All business data lives in `/src/data/`
-- `shops.json` — 10 core stops + directory stops, full data model
-- `layers.json` — layer definitions
-- `badges.json` — badge tiers
-- `trivia.json` — per-stop trivia
+All business data lives in `/src/data/`.
 
-Community corrections welcome via PR to the JSON files.
+- `shops.json` - placeholder postmark, boardwalk bonus, and read-only history layer records
+- `layers.json` - layer definitions
+- `badges.json` - placeholder badge tiers
+- `trivia.json` - placeholder trivia records
 
-## Design principles
+## Notes
 
-- Steve Krug: Don't Make Me Think
-- Camino de Santiago: personal, directional, earned
-- Hygge: warmth without friction
-
-## Hashtags
-
-#NaplesFlorida #NaplesPier #OldNaples #5thAvenueSouth
+- Naples remains the golden master for architecture.
+- Object Americana is not in the core route.
+- Boardwalk is bonus content.
+- Springwood / West Side is a read-only history layer placeholder.
+- Cedarburg is only a later reference for the two-street schematic and railroad-divider behavior.

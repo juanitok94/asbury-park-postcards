@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const COOKIE_NAME = 'hh_phone'
+const COOKIE_NAME = 'app_postmarks_phone'
 const MAX_AGE = 365 * 24 * 3600
 
 export function getPhoneCookie(): string | null {
   if (typeof document === 'undefined') return null
-  const match = document.cookie.match(/(?:^|;\s*)hh_phone=([^;]+)/)
+  const match = document.cookie.match(/(?:^|;\s*)app_postmarks_phone=([^;]+)/)
   return match ? decodeURIComponent(match[1]) : null
 }
 

@@ -1,72 +1,9 @@
 [
   {
-    "shopId": "bad-ass-coffee",
-    "question": "Bad Ass Coffee was named after the donkeys that hauled Kona coffee beans up the volcanic slopes of the Big Island. What makes Kona coffee so valuable that it was worth hauling by donkey?",
-    "answer": "Kona coffee grows only in a narrow belt on the slopes of Mauna Loa and Hualalai on Hawaii's Big Island — roughly 30 miles long and 1 to 2 miles wide. The combination of volcanic soil, high altitude, and the island's afternoon cloud cover creates a microclimate that produces a naturally low-acid, smooth, complex bean. 100% Kona is one of the most expensive coffees in the world. The donkeys — called paka in Hawaiian — worked farms that had no road access. The name stuck long after the roads arrived.",
-    "difficulty": "curious",
-    "category": "coffee-culture"
-  },
-  {
-    "shopId": "brambles-english-tea-room",
-    "question": "Brambles serves traditional English high tea. The term 'high tea' is widely misunderstood. What does 'high' actually refer to?",
-    "answer": "The height of the table. High tea was originally a working-class evening meal eaten at a high dining table, not the fancy afternoon service it is associated with today. Afternoon tea, served at low parlor tables, was the upper-class tradition. Brambles serves the latter. The names got swapped somewhere along the way.",
-    "difficulty": "visitor",
-    "category": "history"
-  },
-  {
-    "shopId": "fifth-avenue-coffee-company",
-    "question": "5th Avenue South was developed as a commercial corridor in the early 1900s. The street was named to mirror a famous avenue in which American city?",
-    "answer": "New York City. Naples was developed by Walter Haldeman and his partners with ambitions to create a refined Southern resort town. Naming the main street after Manhattan's most prestigious boulevard was deliberate. The parallel held up better than most civic aspirations do.",
-    "difficulty": "local",
-    "category": "history"
-  },
-  {
-    "shopId": "the-brick-coffee-bar",
-    "question": "The Brick serves Lavazza coffee. Lavazza is Italy's largest coffee company. In what Italian city was it founded, and in what year?",
-    "answer": "Turin, 1895. Luigi Lavazza opened a grocery shop and began blending different coffees to create consistent flavor profiles regardless of origin or harvest variation. The blending approach became Lavazza's signature and is now standard practice across commercial espresso. They have been doing it for 130 years.",
-    "difficulty": "curious",
-    "category": "coffee-culture"
-  },
-  {
-    "shopId": "bonta-bakery",
-    "question": "Bonta is an Italian word. What does it mean, and how does the name reflect what the bakery is trying to do?",
-    "answer": "Bonta means goodness in Italian, with connotations of kindness and wholesomeness. In Italian food culture it implies simplicity done right rather than complexity done impressively. A bakery named Bonta is making a claim about priorities. The gelato backs it up.",
-    "difficulty": "visitor",
-    "category": "culture"
-  },
-  {
-    "shopId": "the-cafe",
-    "question": "The Cafe has Scandinavian roots. Scandinavian cafe culture is built around a concept called fika. What is fika, and how is it different from a coffee break?",
-    "answer": "Fika is a Swedish word for a deliberate pause in the day taken with coffee and something to eat, usually with other people. It is not a quick break. It is a scheduled interruption, a cultural institution. Swedes take fika seriously enough that skipping it is considered slightly rude. The Cafe runs on that philosophy.",
-    "difficulty": "curious",
-    "category": "culture"
-  },
-  {
-    "shopId": "tonys-off-third",
-    "question": "Tony's Off Third has been on 3rd Street South since 1995. The street itself has a different character from 5th Avenue South. What accounts for the difference in feel between the two corridors?",
-    "answer": "3rd Street South was developed as a boutique residential shopping street in the 1970s and 1980s, with a deliberate emphasis on small independent businesses, courtyards, and greenery. 5th Avenue South was the older commercial main street, developed earlier and with a broader mix of uses. The two corridors evolved differently and the difference is still visible. Tony's is a product of the 3rd Street tradition.",
-    "difficulty": "local",
-    "category": "history"
-  },
-  {
-    "shopId": "books-on-third",
-    "question": "Books on Third opened in October 2025 as Naples' first independent bookstore in years. Indie bookstores nearly disappeared in the 2010s. What reversed the trend?",
-    "answer": "Several things converged. Amazon's dominance plateaued. The pandemic drove people toward local businesses and physical books. The BookTok phenomenon on TikTok created a new generation of enthusiastic readers who preferred to browse in person. Independent bookstore openings outpaced closures in the US for four consecutive years from 2021 to 2024. Naples waited longer than most cities its size. Books on Third arrived into a market that was ready.",
-    "difficulty": "curious",
-    "category": "culture"
-  },
-  {
-    "shopId": "janes-cafe-on-3rd",
-    "question": "Jane's menu is described as British-American and organic. British food has a poor international reputation, but British cafe culture contributed one thing to American breakfast menus. What is it?",
-    "answer": "The full cooked breakfast. Eggs, bacon, sausage, toast, beans, mushrooms, tomato all on one plate, eaten at a table with coffee. Americans shortened and adapted it, but the idea of a substantial morning meal taken sitting down rather than on the go is a British contribution. Jane's version leans into the garden setting and organic sourcing. The bones are older than Naples itself.",
-    "difficulty": "curious",
-    "category": "food"
-  },
-  {
-    "shopId": "cove-inn-coffee-shoppe",
-    "question": "The Cove Inn has been on Naples Bay for decades. Naples Bay itself connects to the Gulf of Mexico through Gordon Pass. What kind of marine life regularly passes through Naples Bay?",
-    "answer": "Bottlenose dolphins, manatees, snook, redfish, and tarpon are all common in Naples Bay. The bay is relatively shallow and calm, making it ideal nursery habitat. Dolphins are frequently spotted from the Cove Inn waterfront, especially in the morning. The Pier drew people to the Gulf side. The Bay side draws the locals.",
-    "difficulty": "visitor",
-    "category": "culture"
+    "shopId": "placeholder-core-postmark",
+    "question": "PLACEHOLDER_TRIVIA_QUESTION",
+    "answer": "PLACEHOLDER_TRIVIA_ANSWER",
+    "difficulty": "placeholder",
+    "category": "placeholder"
   }
 ]

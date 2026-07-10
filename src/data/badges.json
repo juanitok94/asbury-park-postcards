@@ -1,32 +1,22 @@
 [
   {
-    "id": "explorer",
-    "label": "Old Naples Explorer",
-    "threshold": 3,
+    "id": "first-postcard",
+    "label": "PLACEHOLDER_FIRST_POSTCARD_BADGE",
+    "threshold": 1,
     "type": "core",
-    "icon": "☕",
-    "color": "#c9a060",
-    "description": "You've started walking the corridor.",
+    "icon": "PM",
+    "color": "#E8543F",
+    "description": "PLACEHOLDER_FIRST_POSTCARD_BADGE_DESCRIPTION",
     "compostela": false
   },
   {
-    "id": "regular",
-    "label": "Corridor Regular",
-    "threshold": 7,
-    "type": "core",
-    "icon": "🌴",
-    "color": "#0d4a6b",
-    "description": "Seven in. You know this neighborhood now.",
-    "compostela": false
-  },
-  {
-    "id": "local",
-    "label": "Old Naples Passport",
+    "id": "complete-collection",
+    "label": "PLACEHOLDER_COMPLETE_COLLECTION_BADGE",
     "threshold": 10,
     "type": "core",
-    "icon": "⚓",
-    "color": "#c9a060",
-    "description": "You walked the corridor. Go stand at the end of the pier.",
+    "icon": "AP",
+    "color": "#10222F",
+    "description": "PLACEHOLDER_COMPLETE_COLLECTION_BADGE_DESCRIPTION",
     "compostela": true
   }
 ]
