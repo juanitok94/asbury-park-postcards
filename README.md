@@ -27,15 +27,15 @@ Open http://localhost:3000
 
 All business data lives in `/src/data/`.
 
-- `shops.json` - placeholder postmark, boardwalk bonus, and read-only history layer records
-- `layers.json` - layer definitions
-- `badges.json` - placeholder badge tiers
-- `trivia.json` - placeholder trivia records
+- `shops.json` - 15 core stops + 3 directory stops (all copy currently PLACEHOLDER)
+- `layers.json` - 7 content layers (coffee, music, vintage, records, books, food, vices)
+- `badges.json` - 3 badge tiers (1, 8, 15)
+- `trivia.json` - trivia records (needs Asbury-specific content)
 
 ## Notes
 
-- Naples remains the golden master for architecture.
-- Object Americana is not in the core route.
-- Boardwalk is bonus content.
-- Springwood / West Side is a read-only history layer placeholder.
-- Cedarburg is only a later reference for the two-street schematic and railroad-divider behavior.
+- Architecture cloned from Old Naples Passport golden master.
+- 15 core stops: Bangs Ave (1–4), Main St (5), Cookman Ave (6–13), Boardwalk (14–15).
+- Stops 14–15 (Wonder Bar, Stone Pony) are anchor stops with distinct editorial treatment.
+- 3 directory stops on Cookman Ave (Antique Emporium, House of Independents, Cookman Creamery).
+- Layer-based radio filter with coffee as default.

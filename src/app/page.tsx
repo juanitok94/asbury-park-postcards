@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import shopsData from '@/data/shops.json'
 import RouteFilter from '@/components/RouteFilter'
+
+const shops = shopsData as any[]
+const coreCount = shops.filter(s => s.passportType === 'core').length
 
 export default function Home() {
   return (
@@ -11,10 +15,10 @@ export default function Home() {
           POSTCARD COLLECTION
         </p>
         <h1 className="font-serif text-5xl font-black text-[var(--cream)] leading-none">
-          Asbury Park
+          Asbury Park,
         </h1>
         <h2 className="font-serif text-4xl italic text-[var(--gold)] leading-none mt-1">
-          Postmarks
+          New Jersey
         </h2>
         <p className="text-[var(--gold)] text-sm italic mt-3 opacity-70 leading-relaxed max-w-xs mx-auto">
           Collect postcards around Asbury Park. Postmarks confirm visits.
@@ -58,7 +62,7 @@ export default function Home() {
 
         <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-40
                       uppercase text-center mt-8">
-          Asbury Park, NJ · PLACEHOLDER_ROUTE_SUMMARY
+          Asbury Park, NJ · {coreCount} stops · Bangs · Main · Cookman · Boardwalk
         </p>
       </div>
 
@@ -94,7 +98,7 @@ export default function Home() {
           </a>
         </div>
         <p className="font-mono text-[10px] text-[var(--gold)] opacity-40 tracking-widest mt-6">
-          #AsburyParkPostmarks
+          #AsburyPark
         </p>
       </div>
 

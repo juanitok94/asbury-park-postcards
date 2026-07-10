@@ -2,17 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-# Old Naples Passport — Claude Code Project Brief
+# Asbury Park Postmarks — Claude Code Project Brief
 > John Kean · Peachy Kean DevOps LLC · Asheville, NC
-> Last updated: June 26, 2026
+> Last updated: July 10, 2026
 
 ## What This Is
-Old Naples Passport is a mobile-first digital walking passport
-for Old Naples, FL. 10 core stops, Design District to Naples Bay.
-Users walk the corridor north to south, weaving between
-Fifth Avenue South and Third Street South, stamp each stop,
-and finish at the Naples Pier. No auth, no login,
-localStorage only.
+Asbury Park Postmarks is a mobile-first digital walking postcard
+collection for Asbury Park, NJ. 15 core stops, Bangs Ave to the
+Boardwalk, west to east. Users walk the corridor, collect
+postmarks at each stop, and finish at the Boardwalk.
+No auth, no login, no cookies, no PII. localStorage only.
 
 ## Commands
 
@@ -26,9 +25,9 @@ npx tsc --noEmit   # Type-check without emitting (required before finishing any 
 No test suite exists. Manual review at localhost:3000 is the test process.
 
 ## Live URLs
-- Production: old-naples-passport.vercel.app (TBD)
-- Repo: github.com/juanitok94/old-naples-passport (TBD)
-- Local: localhost:3000 (npm run dev in C:\naples-pass)
+- Production: asbury-park-postcards.vercel.app (TBD)
+- Repo: github.com/juanitok94/asbury-park-postcards (TBD)
+- Local: localhost:3000 (npm run dev)
 
 ## Tech Stack
 - Next.js 16 App Router
@@ -39,20 +38,22 @@ No test suite exists. Manual review at localhost:3000 is the test process.
 
 ## Design Principles — Non-Negotiable
 1. Hygge — warmth, slowness, belonging
-2. Camino — journey, earned progress, north to south
+2. Camino — journey, earned progress, west to east
 3. Krug — don't make me think, clarity first
 4. Mobile-first — primary user is walking the corridor
    holding a phone. Desktop is graceful enhancement only.
 5. Human first — if it feels like a generic app,
-   it's wrong. It should feel like Old Naples.
+   it's wrong. It should feel like Asbury Park.
 
 ## Color System — Do Not Change
-- Cream background: #f5f0e8
-- Deep navy: #0d1f3c
-- Navy mid: #1a3560
-- Brushed gold accent: #c9a060
-- Gold light: #e8c98a
-- Body text: #0d1f3c
+Defined in globals.css as CSS custom properties:
+- Cream background: #F4EBDA (--cream)
+- Deep navy: #10222F (--navy)
+- Navy mid: #1A3A4A (--navy-mid)
+- Rust/coral accent: #E8543F (--gold, legacy name)
+- Gold light: #F0A868 (--gold-light)
+- Body text: #10222F (--body-text)
+- Teal accent: #4FA89B (--teal)
 
 ## Typography — Do Not Change
 - Playfair Display — headings (font-serif)
@@ -60,66 +61,89 @@ No test suite exists. Manual review at localhost:3000 is the test process.
 - IBM Plex Mono — labels, UI elements (font-mono)
 
 ## Two ICPs
-1. TOURISTS — visiting Naples, want authentic local
-   experiences beyond the chain restaurants.
+1. VISITORS — day-tripping or weekending in Asbury Park,
+   want authentic local stops beyond the obvious.
    Respond to discovery, walking, feeling like an insider.
-2. BUSINESS OWNERS — independent shop owners on 5th and 3rd
-   who want foot traffic and to feel proud of being
-   featured, not marketed at.
+2. BUSINESS OWNERS — independent shop owners on Cookman
+   and Bangs who want foot traffic and to feel proud
+   of being featured, not marketed at.
 
 ## Journey Direction
-5th Avenue first (west end at Brambles, east to The Cafe),
-then cross to 3rd Street South (Bad Ass Coffee through Jane's),
-then south to Naples Bay (Cove Inn). Walk to the pier after.
-The Pier is NOT a stamp stop — it is the destination.
-Completion screen fires at stop 10 with copy:
-"You walked the corridor. Now walk to the end of the pier.
-You've earned the sunset."
+West to east. Bangs Ave first (stops 1–4), cross Main St
+(stop 5), Cookman Ave (stops 6–13), then east to the
+Boardwalk (stops 14–15). Convention Hall is the visual
+icon for the destination/completion.
 
-## The Naples Pier
-Symbol of Naples. Built 1888. Pelicans on the pilings.
-The pier silhouette is the passport's visual hero mark.
-5-minute walk from Cove Inn (stop 10).
+## Convention Hall
+Symbol of Asbury Park. The Convention Hall silhouette is
+the postcard collection's visual hero mark. Its SVG
+appears on the passport completion certificate.
 
-## The 10 Core Stops (5 morning + 5 evening)
-| # | Shop | Zone | Address | Mealtime |
-|---|------|------|---------|---------|
-| 1 | Brambles English Tea Room | fifth | 340 5th Ave S | morning |
-| 2 | Bad Ass Coffee of Hawaii | third | 1307 3rd St S | morning |
-| 3 | 5th Avenue Coffee Company | fifth | 599 5th Ave S | morning |
-| 4 | Bontà Bakery | fifth | 824 5th Ave S #2 | morning |
-| 5 | Jane's Cafe on 3rd | third | 1209 3rd St S | morning |
-| 6 | Del Mar | fifth | 494 5th Ave S | dinner |
-| 7 | Osteria Tulia | fifth | 466 5th Ave S | dinner |
-| 8 | La Trattoria | fifth | 878 5th Ave S | dinner |
-| 9 | Ocean Prime | fifth | 699 5th Ave S | dinner |
-| 10 | Gelato&Co | fifth | 483 5th Ave S Unit 2 | dessert |
+## The 15 Core Stops
+| # | Shop | Zone | Address | Layers |
+|---|------|------|---------|--------|
+| 1 | Café Volan | bangs | 510 Bangs Ave | coffee |
+| 2 | Object Americana | bangs | 713 Bangs Ave | vintage |
+| 3 | Goldrush | bangs | 719 Bangs Ave | coffee |
+| 4 | Cardinal Provisions | bangs | 513 Bangs Ave | food |
+| 5 | Funky Donkey | main | 404 Main St | vices |
+| 6 | Paranormal Books | cookman | 621 Cookman Ave | books |
+| 7 | Groovy Graveyard | cookman | 658 Cookman Ave | records |
+| 8 | Blackbird Presents | cookman | 651 Cookman Ave | music |
+| 9 | Talula's | cookman | 550 Cookman Ave | food |
+| 10 | Lola's European Cafe | cookman | 539 Cookman Ave | vices |
+| 11 | TAKA | cookman | 660 Cookman Ave | food |
+| 12 | Confections of a Rockstar | cookman | 550 Cookman Ave | vices |
+| 13 | Asbury Park Brewery | cookman | 614 Cookman Ave | vices |
+| 14 | Wonder Bar | boardwalk | 1213 Ocean Ave | music |
+| 15 | Stone Pony | boardwalk | 913 Ocean Ave | music |
 
-## Bonus/Directory Stops
-- Three Sixteen Coffee & Bakery (13500 Tamiami Trail N)
-  4.8 stars, excellent croissants — too far to walk, good bonus stop
-- Narrative Coffee Roasters Mercato (9106 Strada Pl)
-  NOTE: Central Ave location CLOSED as of May 2026
+Stops 14–15 are anchor stops (Wonder Bar, Stone Pony).
+Their editorial copy uses ANCHOR_PLACEHOLDER — do not
+draft anchor stories without explicit approval.
+
+## Directory Stops
+| Shop | Zone | Address | Layers |
+|------|------|---------|--------|
+| Antique Emporium | cookman | 646 Cookman Ave | vintage |
+| House of Independents | cookman | 572 Cookman Ave | music |
+| Cookman Creamery | cookman | 711 Cookman Ave | food |
+
+## Seven Content Layers (filter order)
+| Layer | Color | Icon |
+|-------|-------|------|
+| coffee | #6F4E37 | CF |
+| music | #E8543F | MU |
+| vintage | #4FA89B | VN |
+| records | #10222F | RC |
+| books | #8B5A3C | BK |
+| food | #C4703A | FD |
+| vices | #7B4B94 | VC |
+
+Layers are radio-button filters (one active at a time).
+Default filter: coffee. Music must follow coffee in order.
 
 ## Zone Field Values
 | Zone | Description |
 |------|-------------|
-| `"design"` | Naples Design District (north of downtown) |
-| `"fifth"` | Fifth Avenue South corridor |
-| `"third"` | Third Street South corridor |
-| `"bay"` | Naples Bay / waterfront approach |
+| `"bangs"` | Bangs Avenue (west, stops 1–4) |
+| `"main"` | Main Street crossing (stop 5) |
+| `"cookman"` | Cookman Avenue corridor (stops 6–13) |
+| `"boardwalk"` | Boardwalk / Ocean Ave (stops 14–15) |
 
 ## File Structure
 src/
   app/
-    page.tsx          — homepage
+    page.tsx          — homepage (server component)
     map/page.tsx      — interactive map
-    passport/         — stamp collection
+    passport/         — postcard collection
     stop/[slug]/      — individual stop pages
+  components/
+    RouteFilter.tsx   — layer-based filter (client)
   data/
     shops.json        — canonical data, source of truth
-    layers.json       — map filter layers
-    badges.json       — achievement badges
+    layers.json       — seven content layers
+    badges.json       — achievement badges (3)
     trivia.json       — trivia questions per stop
   lib/
     stamps.ts         — localStorage stamp logic
@@ -131,17 +155,19 @@ Key fields on each shop object:
 | Field | Type | Notes |
 |-------|------|-------|
 | `id` | string | kebab-case slug, used in URL and image paths |
-| `passportType` | `"core"` \| `"bonus"` \| absent | core = numbered passport stop |
-| `passportStop` | number | 1–10, north-to-south order |
-| `zone` | `"design"` \| `"fifth"` \| `"third"` \| `"bay"` | which corridor |
-| `coordinates` | `[lon, lat]` | longitude first (not lat/lon) |
+| `passportType` | `"core"` \| `"directory"` | core = numbered passport stop |
+| `passportStop` | number \| null | 1–15, west-to-east order; null for directory |
+| `zone` | `"bangs"` \| `"main"` \| `"cookman"` \| `"boardwalk"` | which corridor segment |
+| `coordinates` | `[lon, lat]` | longitude first (not lat/lon) — currently `[0, 0]` placeholder |
 | `selloColor` | hex | per-shop accent color for stamp circles and headers |
-| `layers` | string[] | e.g. `["coffee"]` — used for map filter visibility |
+| `layers` | string[] | e.g. `["coffee"]` — used for layer filter visibility |
 | `hygge` | boolean | hygge-quality stop — do not modify without confirmation |
 | `hours` | `{ mon–sun: string, note?: string }` | `"Closed"` for closed days |
 | `stamp` | `{ welcomeLine, subLine }` | Shown after stamping on stop page |
 | `story` | `{ headline, body, insiderTip?, parkingNote? }` | Editorial content |
-| `status` | string | `"confirmed-open"` or `"needs-verification"` |
+| `status` | string | `"placeholder"` or `"confirmed-open"` |
+| `instagram` | string | Instagram handle (no @), empty string if unknown |
+| `website` | string | URL without protocol, empty string if unknown |
 
 ## Client vs. Server components
 
@@ -156,7 +182,7 @@ Never call stamp functions outside `useEffect` or client components.
 ## Standing Rules for Claude Code
 1. Always check TypeScript compiles before finishing
    (npx tsc --noEmit)
-2. Never modify shops.json stop numbers or core/bonus
+2. Never modify shops.json stop numbers or core/directory
    status without explicit confirmation from John
 3. Never change colors, fonts, or design tokens
 4. Mobile-first — test layout at 390px width thinking
@@ -170,22 +196,32 @@ Never call stamp functions outside `useEffect` or client components.
    assume geographic order
 8. Truncated messages — if a message appears cut off,
    complete the task based on available context
+9. Zero PII — no cookies, no phone numbers, no email
+   collection, no analytics that identify users.
+   localStorage only. This is a hard constraint.
 
-## Current Build Status (June 26, 2026)
-- ✅ Cloned from wavl-guide
-- ✅ shops.json rebuilt with 10 Naples stops
-- ✅ layers.json updated for Naples
-- ✅ badges.json updated for Old Naples Passport
-- ✅ globals.css updated with navy/cream/gold palette
-- ✅ layout.tsx updated with new title/description
-- ✅ package.json renamed to naples-pass
-- ⬜ Homepage copy (Haywood references need removing)
-- ⬜ Passport page copy
-- ⬜ Map page
-- ⬜ Stop pages
-- ⬜ trivia.json (Naples-specific)
-- ✅ Kunjani replaced with The Cafe (confirmed-open, 821 5th Ave S)
-- ✅ Bontà address corrected to 824 5th Ave S #2
+## Current Build Status (July 10, 2026)
+- ✅ Cloned from Naples golden master
+- ✅ shops.json rebuilt with 15 core + 3 directory Asbury stops
+- ✅ layers.json: 7 content layers (coffee, music, vintage, records, books, food, vices)
+- ✅ badges.json: 3 badges retargeted to 15 stops
+- ✅ globals.css: Asbury palette in place
+- ✅ layout.tsx: metadata updated for Asbury Park
+- ✅ map/page.tsx: 4-zone layout, west-to-east, layer filter
+- ✅ passport/page.tsx: Convention Hall SVG, 15-stop grid
+- ✅ stop/[slug]/page.tsx: zone labels, dynamic stop count
+- ✅ stop/[slug]/opengraph-image.tsx: Asbury zones, raw hex for Satori
+- ✅ RouteFilter.tsx: layer-based radio filter, coffee default
+- ✅ page.tsx: Asbury hero, placeholder body copy
+- ✅ PII scaffolding removed (passportApi.ts, usePhone.ts, PhoneModal.tsx)
+- ✅ mealtime field stripped from shops.json
+- ✅ CLAUDE.md rewritten for Asbury Park
+- ⬜ Editorial copy (all stops currently PLACEHOLDER)
+- ⬜ Anchor stop copy (Wonder Bar, Stone Pony — ANCHOR_PLACEHOLDER)
+- ⬜ Homepage body copy (4 PLACEHOLDERs remain)
+- ⬜ trivia.json (needs Asbury-specific content)
+- ⬜ Real coordinates for all 18 stops
+- ⬜ Real hours for all stops
 - ⬜ Shop photos (after photo walk)
 - ⬜ GitHub repo creation
 - ⬜ Vercel deployment
@@ -200,18 +236,18 @@ append a lab note under ## Lab Notes without being asked.
 Format: [date] - what failed - why - what to do instead.
 
 ## Lab Notes
-- 2026-06-26 - Kunjani Craft Coffee & Gallery address unconfirmed —
-  some sources place it near Waterside Shops (North Naples), not
-  walkable from Old Naples corridor. Marked needs-verification in
-  shops.json. Verify before launch and replace if not walkable.
-- 2026-06-26 - Kunjani Craft Coffee & Gallery removed from passport. Verified permanently closed (Apr 13, 2026 per their Facebook) AND former address (780 Seagate Dr) was never walkable from Old Naples corridor. Replaced with The Cafe (821 5th Ave S). Bontà address corrected from estimated 490 5th Ave S to confirmed 824 5th Ave S #2.
-- 2026-06-26 - Revision 2 polish for client demo (M.A. Vadini). Renamed homepage from "Old Naples Passport" to "Naples, Florida" with tagline-only hero; "Passport" now lives only on CTA. Replaced emoji line with custom SVG pier silhouette (navy + gold sun, Option 3). Added Peachy Kean DevOps footer attribution with mailto. Fixed map projection (route-position by passportStop, not latitude) — Forever Fiore no longer isolated. Filter pills now work exclusively (single selectedLayer state, radio-button behavior). Hidden Collection spacing fixed with defensive inline-style gap and full shop names. Verified Forever Fiore address (970 5th Ave N, was 950) and dropped Brambles suite. Cove Inn insider tip updated with cash-only detail.
-- 2026-06-26 - Revision 2.4: Voice pass on all 10 stop story bodies. Removed em dashes throughout, cut filler phrases and clichés, tightened copy to read as a knowledgeable friend's recommendation rather than generated travel writing. Cove Inn copy kept as-is (strongest on the site). trivia.json replaced entirely: 14 Asheville/Haywood Road entries removed, 10 Naples-specific entries written from scratch, one per core stop. Topics: preserved florals, high tea etymology, 5th Ave South naming history, Lavazza founding, Italian bonta meaning, Scandinavian fika, 3rd Street vs 5th Ave development history, indie bookstore revival, British breakfast tradition, Naples Bay marine life.
-- 2026-06-26 - Revision 2.3: Dynamic OG images via Next.js ImageResponse API. Two new files: src/app/opengraph-image.tsx (homepage card — navy bg, gold pier silhouette, "Naples, Florida" title) and src/app/stop/[slug]/opengraph-image.tsx (per-stop card — stop number circle in selloColor, stop name, address, story headline, zone label, Peachy Kean footer). layout.tsx had no hardcoded OG image reference — no edit needed. Per-stop cards pre-rendered as SSG at build time. Implementation notes: pilings expanded from .map() to individual rect elements; border uses explicit borderTopWidth/Style/Color (not shorthand) for Satori compatibility.
-- 2026-06-26 - Revision 2.2: Five surgical fixes. Cove Inn "Walk to the pier" nav link → "Walk to the water". Cove Inn hours note pier reference removed. Site metadata updated from "Old Naples Passport" to "Naples, Florida — A Walking Guide". Third Street South Farmers Market added as bonus stop (Saturday only, 7:30–11:30 AM, 60 vendors, since 1994). The Cafe updated with website, Instagram, Scandinavian-roots story detail, TripAdvisor credibility line. Note: website values stored without https:// protocol — stop page template-strings it on; brief-supplied full URLs were stripped to avoid double-protocol.
-- 2026-06-26 - Revision 2.1: Discovered Naples Pier is fully closed — Hurricane Ian (Sept 2022) damage, rebuild groundbreaking Jan 2026, estimated completion Nov 2026. Updated all pier-ending copy to acknowledge the rebuild honestly rather than promise a walk that isn't available. Tagline rewritten ("Naples without the pier wouldn't be Naples. The sixth rebuild is in progress. We'll walk the corridor in the meantime."). Cove Inn story updated with redirect to 13th Ave S beach end + construction note. Stamp 10 completion message updated. Founder note description polished to "streets worth walking." Naples Est. 1885 history line added to intro.
-- 2026-06-27 - Revision 3A: Five delight features (commit 356b188). Time-of-day greeting (Good morning/afternoon/evening, Naples) as 'use client' component replacing static eyebrow. Saturday farmers market banner — appears only Saturday before 11:30 AM, client component returns null otherwise. Last-stamped date written to localStorage on each stamp (recordStampDate in stamps.ts), shown on passport page when stampCount > 0. Gold route line segments on map — 9 individual divs replace single line, each fills gold when both neighboring stops are stamped (0.8s transition). Completion certificate on passport page when all 10 stamped — pier SVG, completion date stored in walk-complete-date localStorage key, all 10 stop names, share prompt. Existing COMPOSTELA block preserved below stamp grid.
-- 2026-06-27 - Revision 2.2 (stop swap + route reorder): Forever Fiore removed — no answer on phone verification calls. Replaced with Bad Ass Coffee of Hawaii (1307 3rd St S) per local recommendation from Ariana at Brambles. Route reordered: passport now runs 5th Avenue first (Brambles→The Cafe, stops 1–5) then crosses to 3rd Street South (Bad Ass Coffee→Jane's, stops 6–9) then bay finish (Cove Inn, stop 10). Brambles is now stop 1. OG image was already code-based (fixed in Rev 2.3) — no change needed. trivia.json: forever-fiore entry replaced with bad-ass-coffee Kona coffee question. nearbyPassportStops updated throughout to reflect new adjacency. Future dining layer candidates from Ariana: Del Mar (494 5th Ave S), Osteria Tulia (466 5th Ave S), Ocean Prime (699 5th Ave S), La Trattoria (878 5th Ave S), Gelato&Co (483 5th Ave S Unit 2), 3rd Street Farmers Market (Saturdays 7:30–11:30 AM).
-- 2026-06-28 - Revision 2.5: metadataBase fixed (old-naples-passport.vercel.app → naples-pass.vercel.app). Homepage copy: pier reference removed from body paragraph and footer tagline — kept only in hero subtitle. Second body paragraph ("Start in the Design District...") removed entirely. Footer note simplified to "Naples, FL · Est. 1885 · Ten stops. Two streets." Quiet Six → Quiet Five (only 5 core stops have hygge:true — brambles, the-cafe, tonys-off-third, books-on-third, janes-cafe-on-3rd). hyggeStops filter updated to exclude passportType:"directory" stops. Brambles address: website returned 403, could not verify externally; keeping 340 5th Ave S per existing verified data. Bad Ass Coffee website: provided URL (badassco.com) redirects to domain-parking page, badassoffhawaii.com also unresolvable — website field left blank. mealtime field added to all 10 core stops (all: morning+lunch). Five directory stops added: Del Mar, Osteria Tulia, Ocean Prime, La Trattoria, Gelato&Co — all zone fifth, passportType directory, with mealtime as lunch/dinner/dessert as appropriate. RouteFilter.tsx client component added: mealtime filter pills (Morning/Lunch/Dinner/Dessert), time-based default (dinner if hour >= 18, else morning), shows Dining section for non-Morning filters. README replaced: Haywood Hoppers → Naples content.
-- 2026-06-29 - Revision 2.7: Passport expanded to 5 morning + 5 evening stops. Five coffee stops demoted from core to directory (the-brick, the-cafe, tonys-off-third, books-on-third, cove-inn). Five morning stops renumbered 1–5 (brambles, bad-ass, fifth-ave-coffee, bonta, janes). Five dining stops promoted from directory to core (stops 6–10: del-mar, osteria-tulia, la-trattoria, ocean-prime, gelato-co) with stamp data, hours, and full field set added. RouteFilter.tsx: zone-based section split (Fifth Avenue / Third Street + Naples Bay) replaced with single dynamic label (MORNING — FIFTH AVENUE + THIRD STREET / EVENING — FIFTH AVENUE). Directory section label changed to "Also on the Corridor." Homepage body paragraph updated to reflect morning/evening structure. trivia.json retains 10 entries — update needed if promoted stop trivia is desired (brick, cafe, tonys, books, cove-inn trivia entries now reference directory stops only).
-- 2026-06-29 - Revision 2.8: "Walking Guide" → "Strolling Guide" globally across layout.tsx, page.tsx, opengraph-image.tsx, README.md. "Strolling" fits the Naples pace and matches how locals and official sources describe the corridor. Farmers Market feature blurb added between intro CTAs and RouteFilter on homepage — navy bg, gold header, editorial card, permanent fixture (not conditional like SaturdayBanner). Farmers Market entry in shops.json replaced: id changed from "third-street-south-farmers-market" to "third-street-farmers-market", passportType changed from "bonus" to "directory", story rewritten to editorial voice, address updated to street-range description, hours simplified to Saturday-only object. Source: thirdstreetsouth.com + visitnaplesfl.com.
+- 2026-07-09 - usePhone.ts wrote a phone number to a 1-year cookie.
+  It was never called, but it's PII scaffolding with placeholder
+  privacy copy attached. Naples shipped with zero cookies and zero
+  PII, and that's a property worth preserving deliberately rather
+  than by accident. If server-side check-ins come back, build them
+  fresh with real consent copy.
+- 2026-07-09 - Previous session assumed 10 stops (Naples model).
+  Asbury Park has 15 core stops. All hardcoded "10" references
+  were converted to dynamic coreStops.length.
+- 2026-07-09 - Previous session assumed zones were fifth/third/
+  design/bay (Naples). Asbury Park zones are bangs/main/cookman/
+  boardwalk. All zone references corrected.
+- 2026-07-09 - Previous session assumed mealtime-based filtering
+  (Naples model). Asbury uses layer-based filtering with 7 content
+  layers. RouteFilter.tsx was rewritten accordingly.

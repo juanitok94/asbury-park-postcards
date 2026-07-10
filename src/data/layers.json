@@ -1,29 +1,65 @@
 [
   {
-    "id": "postmark",
-    "label": "Postmarks",
+    "id": "coffee",
+    "label": "Coffee",
+    "color": "#6F4E37",
+    "bg": "#F4EBDA",
+    "icon": "CF",
+    "passportLayer": true,
+    "description": "Coffee shops and cafes on the corridor"
+  },
+  {
+    "id": "music",
+    "label": "Music",
     "color": "#E8543F",
     "bg": "#F4EBDA",
-    "icon": "PM",
+    "icon": "MU",
     "passportLayer": true,
-    "description": "PLACEHOLDER_CORE_POSTMARK_LAYER_DESCRIPTION"
+    "description": "Music venues and live performance spaces"
   },
   {
-    "id": "boardwalk",
-    "label": "Boardwalk",
+    "id": "vintage",
+    "label": "Vintage",
     "color": "#4FA89B",
     "bg": "#F4EBDA",
-    "icon": "BW",
-    "passportLayer": false,
-    "description": "PLACEHOLDER_BOARDWALK_BONUS_LAYER_DESCRIPTION"
+    "icon": "VN",
+    "passportLayer": true,
+    "description": "Vintage shops and antiques"
   },
   {
-    "id": "history",
-    "label": "Springwood / West Side",
+    "id": "records",
+    "label": "Records",
     "color": "#10222F",
     "bg": "#F4EBDA",
-    "icon": "H",
-    "passportLayer": false,
-    "description": "PLACEHOLDER_READ_ONLY_HISTORY_LAYER_DESCRIPTION"
+    "icon": "RC",
+    "passportLayer": true,
+    "description": "Record stores and vinyl"
+  },
+  {
+    "id": "books",
+    "label": "Books",
+    "color": "#8B5A3C",
+    "bg": "#F4EBDA",
+    "icon": "BK",
+    "passportLayer": true,
+    "description": "Bookshops and reading rooms"
+  },
+  {
+    "id": "food",
+    "label": "Food",
+    "color": "#C4703A",
+    "bg": "#F4EBDA",
+    "icon": "FD",
+    "passportLayer": true,
+    "description": "Restaurants, bakeries, and provisions"
+  },
+  {
+    "id": "vices",
+    "label": "Vices",
+    "color": "#7B4B94",
+    "bg": "#F4EBDA",
+    "icon": "VC",
+    "passportLayer": true,
+    "description": "Bars, breweries, and indulgences"
   }
 ]

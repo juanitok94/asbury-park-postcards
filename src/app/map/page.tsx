@@ -13,13 +13,13 @@ const layers = layersData as any[]
 // Stops projected by passport order, not real geography.
 // Y offset hints at which corridor: design (top), fifth/third (alternating middle), bay (bottom).
 function stopToX(passportStop: number, flip: boolean): number {
-  const pct = ((passportStop - 1) / 9) * 92 + 4
+  const pct = ((passportStop - 1) / 14) * 92 + 4
   return flip ? 100 - pct : pct
 }
 
 function zoneToYOffset(zone: string, passportStop: number): number {
-  if (zone === 'design') return -55
-  if (zone === 'bay') return 55
+  if (zone === 'main') return 0
+  if (zone === 'boardwalk') return 55
   return passportStop % 2 === 1 ? -35 : 35
 }
 
@@ -33,7 +33,7 @@ const bonusStops = shops.filter(s => s.passportType === 'bonus')
 export default function MapPage() {
   const [stamps, setStamps] = useState<StampRecord>({})
   const [mounted, setMounted] = useState(false)
-  const [selectedLayer, setSelectedLayer] = useState<string | null>(null)
+  const [selectedLayer, setSelectedLayer] = useState<string | null>('coffee')
   const [selectedStop, setSelectedStop] = useState<string | null>(null)
   const [flipped, setFlipped] = useState(false)
 
@@ -89,7 +89,7 @@ export default function MapPage() {
           The Map
         </h1>
         <p className="text-[var(--gold)] text-sm italic mt-1 opacity-70">
-          PLACEHOLDER_MAP_SUBTITLE
+          Fifteen stops, west to east
         </p>
       </div>
 
@@ -142,7 +142,7 @@ export default function MapPage() {
           {/* Direction labels + flip toggle */}
           <div className="flex justify-between items-center mb-2">
             <span className="font-mono text-[9px] tracking-widest text-[var(--navy-mid)] opacity-40 uppercase">
-              {flipped ? '← South' : '← North'}
+              {flipped ? '← East' : '← West'}
             </span>
             <button
               onClick={() => setFlipped(f => !f)}
@@ -153,7 +153,7 @@ export default function MapPage() {
               ⇄ Flip
             </button>
             <span className="font-mono text-[9px] tracking-widest text-[var(--navy-mid)] opacity-40 uppercase">
-              {flipped ? 'North →' : 'South →'}
+              {flipped ? 'West →' : 'East →'}
             </span>
           </div>
 
@@ -185,12 +185,12 @@ export default function MapPage() {
             {/* Corridor crossing placeholder */}
             <div
               className="absolute top-0 bottom-0 w-px transition-all duration-500"
-              style={{ left: `${stopToX(6.5, flipped)}%` }}
+              style={{ left: `${stopToX(4.5, flipped)}%` }}
             >
               <div className="absolute inset-0 bg-[var(--gold)] opacity-30" />
               <div className="absolute top-2 left-1/2 -translate-x-1/2 whitespace-nowrap">
                 <span className="font-mono text-[8px] text-[var(--gold)] tracking-widest bg-[var(--cream)]/80 px-1.5 py-0.5 rounded-sm">
-                  PLACEHOLDER_MAP_DIVIDER
+                  MAIN ST
                 </span>
               </div>
             </div>
@@ -198,39 +198,45 @@ export default function MapPage() {
             {/* Cross-street labels */}
             <div
               className="absolute font-mono text-[8px] tracking-widest text-[var(--navy-mid)] opacity-30 uppercase"
-              style={{ top: '24px', left: `${stopToX(3, flipped)}%`, transform: 'translateX(-50%)' }}
+              style={{ top: '24px', left: `${stopToX(2.5, flipped)}%`, transform: 'translateX(-50%)' }}
             >
-              PLACEHOLDER_STREET_A
+              BANGS AVE
             </div>
             <div
               className="absolute font-mono text-[8px] tracking-widest text-[var(--navy-mid)] opacity-30 uppercase"
-              style={{ top: '24px', left: `${stopToX(8.5, flipped)}%`, transform: 'translateX(-50%)' }}
+              style={{ top: '24px', left: `${stopToX(9.5, flipped)}%`, transform: 'translateX(-50%)' }}
             >
-              PLACEHOLDER_STREET_B
+              COOKMAN AVE
+            </div>
+            <div
+              className="absolute font-mono text-[8px] tracking-widest text-[var(--navy-mid)] opacity-30 uppercase"
+              style={{ top: '24px', left: `${stopToX(14.5, flipped)}%`, transform: 'translateX(-50%)' }}
+            >
+              BOARDWALK
             </div>
 
             {/* Zone labels */}
             {(() => {
-              const crossPct = stopToX(6.5, flipped)
-              const fifthCenter = flipped
+              const crossPct = stopToX(4.5, flipped)
+              const bangsCenter = flipped
                 ? crossPct + (100 - crossPct) / 2
                 : crossPct / 2
-              const thirdCenter = flipped
+              const cookmanCenter = flipped
                 ? crossPct / 2
                 : crossPct + (100 - crossPct) / 2
               return (
                 <>
                   <div
                     className="absolute font-mono text-[8px] tracking-widest text-[var(--navy-mid)] opacity-30 uppercase transition-all duration-500"
-                    style={{ top: '8px', left: `${fifthCenter}%`, transform: 'translateX(-50%)' }}
+                    style={{ top: '8px', left: `${bangsCenter}%`, transform: 'translateX(-50%)' }}
                   >
-                    PLACEHOLDER_ROUTE_SECTION_A
+                    BANGS AVE
                   </div>
                   <div
                     className="absolute font-mono text-[8px] tracking-widest text-[var(--navy-mid)] opacity-30 uppercase transition-all duration-500"
-                    style={{ top: '8px', left: `${thirdCenter}%`, transform: 'translateX(-50%)' }}
+                    style={{ top: '8px', left: `${cookmanCenter}%`, transform: 'translateX(-50%)' }}
                   >
-                    PLACEHOLDER_ROUTE_SECTION_B
+                    COOKMAN AVE
                   </div>
                 </>
               )
@@ -485,20 +491,20 @@ export default function MapPage() {
           </h2>
           <div className="flex-1 border-t border-dashed border-[var(--navy-mid)] opacity-20" />
           <span className="font-mono text-[10px] text-[var(--navy-mid)] opacity-50">
-            {coreStamped}/10
+            {coreStamped}/{coreStops.length}
           </span>
         </div>
 
         <div className="flex flex-col gap-1.5">
           {coreStops.map((shop, i) => {
             const stamped = !!stamps[shop.id]
-            const showDivider = i === 6
+            const showDivider = i === 5 ? '→ Cookman Ave' : i === 13 ? '→ Boardwalk' : null
             return (
               <div key={shop.id}>
                 {showDivider && (
                   <div className="flex items-center gap-3 my-2">
                     <div className="flex-1 h-px bg-[var(--gold)] opacity-30" />
-                    <span className="font-mono text-[9px] text-[var(--gold)] tracking-widest">→ 3rd Street</span>
+                    <span className="font-mono text-[9px] text-[var(--gold)] tracking-widest">{showDivider}</span>
                     <div className="flex-1 h-px bg-[var(--gold)] opacity-30" />
                   </div>
                 )}

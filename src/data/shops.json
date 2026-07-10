@@ -1,106 +1,956 @@
 [
   {
-    "id": "placeholder-core-postmark",
-    "name": "PLACEHOLDER_CORE_POSTMARK_NAME",
-    "address": "PLACEHOLDER_CORE_POSTMARK_ADDRESS",
+    "id": "cafe-volan",
+    "name": "Café Volan",
+    "address": "510 Bangs Ave",
     "city": "Asbury Park",
     "state": "NJ",
-    "zip": "PLACEHOLDER_ZIP",
-    "coordinates": [0, 0],
-    "layers": ["postmark"],
-    "zone": "downtown",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "coffee"
+    ],
+    "zone": "bangs",
     "hours": {
-      "mon": "PLACEHOLDER_HOURS",
-      "tue": "PLACEHOLDER_HOURS",
-      "wed": "PLACEHOLDER_HOURS",
-      "thu": "PLACEHOLDER_HOURS",
-      "fri": "PLACEHOLDER_HOURS",
-      "sat": "PLACEHOLDER_HOURS",
-      "sun": "PLACEHOLDER_HOURS",
-      "note": "PLACEHOLDER_HOURS_NOTE"
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
     },
     "passportStop": 1,
     "passportType": "core",
-    "streetSide": "PLACEHOLDER_STREET_SIDE",
+    "streetSide": "bangs",
     "selloColor": "#E8543F",
     "hygge": false,
-    "mealtime": ["morning"],
     "stamp": {
-      "welcomeLine": "PLACEHOLDER_POSTMARK_WELCOME_LINE",
-      "subLine": "PLACEHOLDER_POSTMARK_SUB_LINE"
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
     },
     "story": {
-      "headline": "PLACEHOLDER_STORY_HEADLINE",
-      "body": "PLACEHOLDER_STORY_BODY",
-      "insiderTip": "PLACEHOLDER_INSIDER_TIP",
-      "parkingNote": "PLACEHOLDER_PARKING_NOTE"
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
     },
-    "offer": { "active": false, "type": "verbal", "text": "", "reward": "" },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
     "nearbyPassportStops": [],
     "multiLayer": false,
     "instagram": "",
     "website": "",
     "status": "placeholder",
-    "lastVerified": "PLACEHOLDER_LAST_VERIFIED"
+    "lastVerified": "PLACEHOLDER"
   },
   {
-    "id": "placeholder-boardwalk-bonus",
-    "name": "PLACEHOLDER_BOARDWALK_BONUS_NAME",
-    "address": "PLACEHOLDER_BOARDWALK_BONUS_ADDRESS",
+    "id": "object-americana",
+    "name": "Object Americana",
+    "address": "713 Bangs Ave",
     "city": "Asbury Park",
     "state": "NJ",
-    "zip": "PLACEHOLDER_ZIP",
-    "coordinates": [0, 0],
-    "layers": ["boardwalk"],
-    "zone": "boardwalk",
-    "passportStop": null,
-    "passportType": "bonus",
-    "streetSide": "PLACEHOLDER_STREET_SIDE",
-    "selloColor": "#4FA89B",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vintage"
+    ],
+    "zone": "bangs",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 2,
+    "passportType": "core",
+    "streetSide": "bangs",
+    "selloColor": "#E8543F",
     "hygge": false,
-    "mealtime": ["bonus"],
     "stamp": {
-      "welcomeLine": "PLACEHOLDER_BOARDWALK_POSTMARK_WELCOME_LINE",
-      "subLine": "PLACEHOLDER_BOARDWALK_POSTMARK_SUB_LINE"
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
     },
     "story": {
-      "headline": "PLACEHOLDER_BOARDWALK_HEADLINE",
-      "body": "PLACEHOLDER_BOARDWALK_BODY"
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
     },
-    "offer": { "active": false, "type": "verbal", "text": "", "reward": "" },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "objectamericana",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "goldrush",
+    "name": "Goldrush",
+    "address": "719 Bangs Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "coffee"
+    ],
+    "zone": "bangs",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 3,
+    "passportType": "core",
+    "streetSide": "bangs",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
     "nearbyPassportStops": [],
     "multiLayer": false,
     "instagram": "",
     "website": "",
     "status": "placeholder",
-    "lastVerified": "PLACEHOLDER_LAST_VERIFIED"
+    "lastVerified": "PLACEHOLDER"
   },
   {
-    "id": "placeholder-springwood-west-side-history",
-    "name": "PLACEHOLDER_SPRINGWOOD_WEST_SIDE_HISTORY_NAME",
-    "address": "PLACEHOLDER_SPRINGWOOD_WEST_SIDE_HISTORY_ADDRESS",
+    "id": "cardinal-provisions",
+    "name": "Cardinal Provisions",
+    "address": "513 Bangs Ave",
     "city": "Asbury Park",
     "state": "NJ",
-    "zip": "PLACEHOLDER_ZIP",
-    "coordinates": [0, 0],
-    "layers": ["history"],
-    "zone": "springwood-west-side",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "food"
+    ],
+    "zone": "bangs",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 4,
+    "passportType": "core",
+    "streetSide": "bangs",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "funky-donkey",
+    "name": "Funky Donkey",
+    "address": "404 Main St",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vices"
+    ],
+    "zone": "main",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 5,
+    "passportType": "core",
+    "streetSide": "main",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "funkydonkeyasburypark",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "paranormal-books",
+    "name": "Paranormal Books",
+    "address": "621 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "books"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 6,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "groovy-graveyard",
+    "name": "Groovy Graveyard",
+    "address": "658 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "records"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 7,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "blackbird-presents",
+    "name": "Blackbird Presents",
+    "address": "651 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "music"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 8,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "talulas",
+    "name": "Talula's",
+    "address": "550 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "food"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 9,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "lolas-european-cafe",
+    "name": "Lola's European Cafe",
+    "address": "539 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vices"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 10,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "taka",
+    "name": "TAKA",
+    "address": "660 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "food"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 11,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "confections-of-a-rockstar",
+    "name": "Confections of a Rockstar",
+    "address": "550 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vices"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 12,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "asbury-park-brewery",
+    "name": "Asbury Park Brewery",
+    "address": "614 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vices"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 13,
+    "passportType": "core",
+    "streetSide": "cookman",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "wonder-bar",
+    "name": "Wonder Bar",
+    "address": "1213 Ocean Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "music"
+    ],
+    "zone": "boardwalk",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 14,
+    "passportType": "core",
+    "streetSide": "boardwalk",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "ANCHOR_PLACEHOLDER",
+      "subLine": "ANCHOR_PLACEHOLDER"
+    },
+    "story": {
+      "headline": "ANCHOR_PLACEHOLDER",
+      "body": "ANCHOR_PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "stone-pony",
+    "name": "Stone Pony",
+    "address": "913 Ocean Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "music"
+    ],
+    "zone": "boardwalk",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": 15,
+    "passportType": "core",
+    "streetSide": "boardwalk",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "ANCHOR_PLACEHOLDER",
+      "subLine": "ANCHOR_PLACEHOLDER"
+    },
+    "story": {
+      "headline": "ANCHOR_PLACEHOLDER",
+      "body": "ANCHOR_PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "antique-emporium",
+    "name": "Antique Emporium",
+    "address": "646 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "vintage"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
     "passportStop": null,
     "passportType": "directory",
-    "streetSide": "PLACEHOLDER_STREET_SIDE",
-    "selloColor": "#10222F",
+    "streetSide": "cookman",
+    "selloColor": "#4FA89B",
     "hygge": false,
-    "mealtime": ["history"],
-    "story": {
-      "headline": "PLACEHOLDER_HISTORY_HEADLINE",
-      "body": "PLACEHOLDER_HISTORY_BODY"
+    "stamp": {
+      "welcomeLine": "",
+      "subLine": ""
     },
-    "offer": { "active": false, "type": "verbal", "text": "", "reward": "" },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
     "nearbyPassportStops": [],
     "multiLayer": false,
     "instagram": "",
     "website": "",
     "status": "placeholder",
-    "lastVerified": "PLACEHOLDER_LAST_VERIFIED"
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "house-of-independents",
+    "name": "House of Independents",
+    "address": "572 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "music"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": null,
+    "passportType": "directory",
+    "streetSide": "cookman",
+    "selloColor": "#4FA89B",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "",
+      "subLine": ""
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
+    "id": "cookman-creamery",
+    "name": "Cookman Creamery",
+    "address": "711 Cookman Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "food"
+    ],
+    "zone": "cookman",
+    "hours": {
+      "mon": "PLACEHOLDER",
+      "tue": "PLACEHOLDER",
+      "wed": "PLACEHOLDER",
+      "thu": "PLACEHOLDER",
+      "fri": "PLACEHOLDER",
+      "sat": "PLACEHOLDER",
+      "sun": "PLACEHOLDER",
+      "note": ""
+    },
+    "passportStop": null,
+    "passportType": "directory",
+    "streetSide": "cookman",
+    "selloColor": "#4FA89B",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "",
+      "subLine": ""
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "",
+    "website": "",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
   }
 ]

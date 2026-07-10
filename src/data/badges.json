@@ -1,22 +1,32 @@
 [
   {
     "id": "first-postcard",
-    "label": "PLACEHOLDER_FIRST_POSTCARD_BADGE",
+    "label": "First Postmark",
     "threshold": 1,
     "type": "core",
     "icon": "PM",
     "color": "#E8543F",
-    "description": "PLACEHOLDER_FIRST_POSTCARD_BADGE_DESCRIPTION",
+    "description": "Collected your first postmark in Asbury Park",
+    "compostela": false
+  },
+  {
+    "id": "halfway",
+    "label": "Halfway There",
+    "threshold": 8,
+    "type": "core",
+    "icon": "½",
+    "color": "#6F4E37",
+    "description": "Passed the halfway mark on the corridor",
     "compostela": false
   },
   {
     "id": "complete-collection",
-    "label": "PLACEHOLDER_COMPLETE_COLLECTION_BADGE",
-    "threshold": 10,
+    "label": "Full Corridor",
+    "threshold": 15,
     "type": "core",
     "icon": "AP",
     "color": "#10222F",
-    "description": "PLACEHOLDER_COMPLETE_COLLECTION_BADGE_DESCRIPTION",
+    "description": "All fifteen postmarks collected — Bangs to Boardwalk",
     "compostela": true
   }
 ]

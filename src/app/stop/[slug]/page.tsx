@@ -6,9 +6,6 @@ import Link from 'next/link'
 import shopsData from '@/data/shops.json'
 import triviaData from '@/data/trivia.json'
 import { getStamps, addStamp, recordStampDate, type StampRecord } from '@/lib/stamps'
-import { usePhone } from '@/lib/usePhone'
-import { getProgress } from '@/lib/passportApi'
-import PhoneModal from '@/components/PhoneModal'
 
 const shops = shopsData as any[]
 const trivia = triviaData as any[]
@@ -18,13 +15,10 @@ const coreStops = shops
   .sort((a, b) => a.passportStop - b.passportStop)
 
 const zoneLabel: Record<string, string> = {
-  design: 'PLACEHOLDER_DISTRICT_LABEL',
-  fifth:  'PLACEHOLDER_STREET_A_FULL',
-  third:  'PLACEHOLDER_STREET_B_FULL',
-  bay:    'PLACEHOLDER_WATERFRONT_LABEL',
-  downtown: 'PLACEHOLDER_DOWNTOWN_LABEL',
+  bangs: 'Bangs Ave',
+  main: 'Main St',
+  cookman: 'Cookman Ave',
   boardwalk: 'Boardwalk',
-  'springwood-west-side': 'Springwood / West Side',
 }
 
 export default function StopPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,8 +26,6 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
   const shop = shops.find(s => s.id === slug)
   const shopTrivia = trivia.find(t => t.shopId === slug)
-
-  const { phone, savePhone, loaded: phoneLoaded } = usePhone()
 
   const [stamps, setStamps] = useState<StampRecord>({})
   const [stamped, setStamped] = useState(false)
@@ -44,25 +36,11 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
   const [showFullStory, setShowFullStory] = useState(false)
 
   useEffect(() => {
-    if (!phoneLoaded) return
     const localStamps = getStamps()
-
-    if (phone) {
-      getProgress(phone).then(slugs => {
-        const merged: StampRecord = { ...localStamps }
-        for (const s of slugs) {
-          if (!merged[s]) merged[s] = new Date().toISOString()
-        }
-        setStamps(merged)
-        setStamped(slugs.includes(slug) || !!localStamps[slug])
-        setMounted(true)
-      })
-    } else {
-      setStamps(localStamps)
-      setStamped(!!localStamps[slug])
-      setMounted(true)
-    }
-  }, [slug, phone, phoneLoaded])
+    setStamps(localStamps)
+    setStamped(!!localStamps[slug])
+    setMounted(true)
+  }, [slug])
 
   if (!shop) {
     return (
@@ -86,10 +64,9 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
   const prevStop = coreIndex > 0 ? coreStops[coreIndex - 1] : null
   const nextStop = coreIndex < coreStops.length - 1 ? coreStops[coreIndex + 1] : null
 
-  // Corridor crossing: moving from fifth/design to third/bay
   const corridorCrossing =
-    (prevStop?.zone === 'fifth' || prevStop?.zone === 'design') &&
-    (shop.zone === 'third' || shop.zone === 'bay')
+    (prevStop?.zone === 'bangs' || prevStop?.zone === 'main') &&
+    (shop.zone === 'cookman')
 
   function handleStamp() {
     if (stamped) return
@@ -113,10 +90,6 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
   return (
     <main className="min-h-screen bg-[var(--cream)] text-[var(--navy)]">
 
-      {/* {phoneLoaded && !phone && (
-        <PhoneModal onSave={savePhone} />
-      )} */}
-
       {/* HEADER — colored by sello */}
       <div
         className="px-6 py-14 text-center border-b-4"
@@ -135,7 +108,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
 
         {isCore && (
           <p className="font-mono text-[10px] tracking-widest text-white/50 uppercase mt-3">
-            Stop {shop.passportStop} of 10 · {zoneLabel[shop.zone] ?? shop.zone}
+            Stop {shop.passportStop} of {coreStops.length} · {zoneLabel[shop.zone] ?? shop.zone}
           </p>
         )}
 
@@ -381,7 +354,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
             if (navigator.share) {
               navigator.share({
                 title: shop.name,
-                text: `I just collected a postmark at ${shop.name} on the Old Asbury Park Postmarks.`,
+                text: `I just collected a postmark at ${shop.name} on Asbury Park Postmarks.`,
                 url: window.location.href,
               })
             } else {
@@ -405,7 +378,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
                 <span className="font-mono text-[10px] text-[var(--gold)] tracking-widest px-2">
-                  PLACEHOLDER_ROUTE_CROSSING_COPY
+                  → Cross Main St
                 </span>
                 <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
               </div>

@@ -1,10 +1,12 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import shopsData from '@/data/shops.json'
+import layersData from '@/data/layers.json'
 
 const shops = shopsData as any[]
+const layers = layersData as any[]
 
 const allCoreStops = shops
   .filter(s => s.passportType === 'core')
@@ -12,36 +14,20 @@ const allCoreStops = shops
 
 const allDirectoryStops = shops.filter(s => s.passportType === 'directory')
 
-const PILLS = [
-  { id: 'morning', label: 'Morning', icon: '☀️' },
-  { id: 'lunch',   label: 'Lunch',   icon: '🍽' },
-  { id: 'dinner',  label: 'Dinner',  icon: '🌙' },
-  { id: 'dessert', label: 'Dessert', icon: '🍦' },
-]
-
 export default function RouteFilter() {
-  const [activeFilter, setActiveFilter] = useState<string>('morning')
-
-  useEffect(() => {
-    if (new Date().getHours() >= 18) setActiveFilter('dinner')
-  }, [])
+  const [activeFilter, setActiveFilter] = useState<string>('coffee')
 
   const filteredCore = useMemo(
-    () => allCoreStops.filter(s => s.mealtime?.includes(activeFilter)),
+    () => allCoreStops.filter(s => s.layers?.includes(activeFilter)),
     [activeFilter]
   )
 
-  const sectionLabel = useMemo(() => {
-    if (activeFilter === 'morning') return 'PLACEHOLDER_CORE_ROUTE_LABEL'
-    return 'PLACEHOLDER_EVENING_ROUTE_LABEL'
-  }, [activeFilter])
-
-  const showDining = ['lunch', 'dinner', 'dessert'].includes(activeFilter)
-
   const filteredDirectory = useMemo(
-    () => showDining ? allDirectoryStops.filter(s => s.mealtime?.includes(activeFilter)) : [],
-    [activeFilter, showDining]
+    () => allDirectoryStops.filter(s => s.layers?.includes(activeFilter)),
+    [activeFilter]
   )
+
+  const activeLayer = layers.find((l: any) => l.id === activeFilter)
 
   function stopCard(shop: any, linked: boolean) {
     const inner = (
@@ -95,23 +81,24 @@ export default function RouteFilter() {
 
       {/* Filter pills */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {PILLS.map(pill => {
-          const active = activeFilter === pill.id
+        {layers.map((layer: any) => {
+          const active = activeFilter === layer.id
           return (
             <button
-              key={pill.id}
-              onClick={() => setActiveFilter(pill.id)}
+              key={layer.id}
+              onClick={() => setActiveFilter(layer.id)}
               className={`
                 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono
                 transition-all border
                 ${active
-                  ? 'bg-[var(--navy)] text-[var(--gold)] border-[var(--navy)]'
+                  ? 'text-white border-transparent'
                   : 'bg-transparent border-[var(--navy-mid)]/20 text-[var(--navy-mid)] opacity-50 hover:opacity-80'
                 }
               `}
+              style={active ? { backgroundColor: layer.color } : {}}
             >
-              <span>{pill.icon}</span>
-              <span>{pill.label}</span>
+              <span>{layer.icon}</span>
+              <span>{layer.label}</span>
             </button>
           )
         })}
@@ -121,7 +108,7 @@ export default function RouteFilter() {
       {filteredCore.length > 0 && (
         <>
           <p className="font-mono text-[11px] tracking-widest text-[var(--navy-mid)] opacity-80 uppercase mb-4 border-l-2 border-[var(--gold)]/40 pl-3">
-            {sectionLabel}
+            {activeLayer?.label ?? 'The Route'}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             {filteredCore.map(s => stopCard(s, true))}
@@ -129,15 +116,15 @@ export default function RouteFilter() {
         </>
       )}
 
-      {/* Empty core state */}
-      {filteredCore.length === 0 && (
+      {/* Empty state */}
+      {filteredCore.length === 0 && filteredDirectory.length === 0 && (
         <p className="font-serif italic text-[var(--navy-mid)] opacity-60 text-sm py-2">
-          PLACEHOLDER_EMPTY_ROUTE_FILTER_COPY
+          No stops match this filter.
         </p>
       )}
 
-      {/* Directory — appears for Lunch / Dinner / Dessert */}
-      {showDining && filteredDirectory.length > 0 && (
+      {/* Directory */}
+      {filteredDirectory.length > 0 && (
         <div className="mt-6">
           <p className="font-mono text-[11px] tracking-widest text-[var(--navy-mid)] opacity-80 uppercase mb-4 border-l-2 border-[var(--gold)]/40 pl-3">
             Also on the Corridor

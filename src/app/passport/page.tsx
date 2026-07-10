@@ -6,8 +6,6 @@ import Link from 'next/link'
 import shopsData from '@/data/shops.json'
 import badgesData from '@/data/badges.json'
 import { getStamps, getLastStampDate, type StampRecord } from '@/lib/stamps'
-import { usePhone } from '@/lib/usePhone'
-import { getProgress } from '@/lib/passportApi'
 
 const shops = shopsData as any[]
 const badges = badgesData as any[]
@@ -18,60 +16,31 @@ const coreStops = shops
 
 const COMPLETE_DATE_KEY = 'asbury-park-postmarks:complete-date'
 
-const fifthStops = coreStops.filter(s => s.zone === 'design' || s.zone === 'fifth' || s.zone === 'downtown')
-const thirdStops = coreStops.filter(s => s.zone === 'third' || s.zone === 'bay')
+const bangsStops = coreStops.filter(s => s.zone === 'bangs' || s.zone === 'main')
+const cookmanStops = coreStops.filter(s => s.zone === 'cookman' || s.zone === 'boardwalk')
 
 export default function PassportPage() {
-  const { phone, loaded: phoneLoaded } = usePhone()
   const [stamps, setStamps] = useState<StampRecord>({})
   const [mounted, setMounted] = useState(false)
   const [lastStampDate, setLastStampDate] = useState<string | null>(null)
   const [completeDate, setCompleteDate] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!phoneLoaded) return
-    const localStamps = getStamps()
-
-    if (phone) {
-      getProgress(phone).then(slugs => {
-        const merged: StampRecord = { ...localStamps }
-        for (const s of slugs) {
-          if (!merged[s]) merged[s] = new Date().toISOString()
-        }
-        setStamps(merged)
-        setMounted(true)
-      })
-    } else {
-      setStamps(localStamps)
-      setMounted(true)
-    }
-  }, [phone, phoneLoaded])
+    setStamps(getStamps())
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
-    if (!phoneLoaded) return
-    const sync = () => {
-      const localStamps = getStamps()
-      if (phone) {
-        getProgress(phone).then(slugs => {
-          const merged: StampRecord = { ...localStamps }
-          for (const s of slugs) {
-            if (!merged[s]) merged[s] = new Date().toISOString()
-          }
-          setStamps(merged)
-        })
-      } else {
-        setStamps(localStamps)
-      }
-    }
+    const sync = () => setStamps(getStamps())
     window.addEventListener('focus', sync)
     return () => window.removeEventListener('focus', sync)
-  }, [phone, phoneLoaded])
+  }, [])
 
   useEffect(() => {
     if (!mounted) return
     setLastStampDate(getLastStampDate())
     const coreCount = coreStops.filter(s => stamps[s.id]).length
-    if (coreCount === 10) {
+    if (coreCount === coreStops.length) {
       if (!localStorage.getItem(COMPLETE_DATE_KEY)) {
         const date = new Date().toLocaleDateString('en-US', {
           month: 'long', day: 'numeric', year: 'numeric',
@@ -83,7 +52,7 @@ export default function PassportPage() {
   }, [stamps, mounted])
 
   const coreStamped = coreStops.filter(s => stamps[s.id]).length
-  const progress = Math.round((coreStamped / 10) * 100)
+  const progress = Math.round((coreStamped / coreStops.length) * 100)
 
   const earnedBadges = badges.filter(
     b => b.type === 'core' && coreStamped >= b.threshold
@@ -103,16 +72,16 @@ export default function PassportPage() {
           className="font-mono text-[10px] tracking-widest text-[var(--gold)] opacity-60
                      hover:opacity-100 transition-opacity uppercase"
         >
-          ← PLACEHOLDER_COMPLETE_COLLECTION_BADGE_TITLE
+          ← Asbury Park Postmarks
         </Link>
         <h1 className="font-serif text-3xl font-black text-[var(--cream)] mt-3">
           Your Postcards
         </h1>
         <p className="text-[var(--gold)] text-sm italic mt-1 opacity-70">
-          {coreStamped === 0 && 'No postmarks yet. PLACEHOLDER_COLLECTION_EMPTY_COPY'}
-          {coreStamped > 0 && coreStamped < 10 &&
-            `${coreStamped} of 10 postmarks collected`}
-          {coreStamped === 10 && 'All postmarks collected. Walk to the pier.'}
+          {coreStamped === 0 && 'No postmarks yet. Start walking.'}
+          {coreStamped > 0 && coreStamped < coreStops.length &&
+            `${coreStamped} of ${coreStops.length} postmarks collected`}
+          {coreStamped === coreStops.length && 'All postmarks collected. Walk to the boardwalk.'}
         </p>
       </div>
 
@@ -123,7 +92,7 @@ export default function PassportPage() {
             Progress
           </span>
           <span className="font-mono text-xs text-[var(--navy-mid)] font-bold">
-            {coreStamped}/10
+            {coreStamped}/{coreStops.length}
           </span>
         </div>
         <div className="w-full h-3 bg-[color-mix(in srgb, var(--cream) 85%, var(--navy) 15%)] rounded-full overflow-hidden border border-[var(--navy-mid)]/20">
@@ -179,38 +148,36 @@ export default function PassportPage() {
           <div className="max-w-[200px] mx-auto mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100"
                  className="w-full">
-              <circle cx="320" cy="36" r="22" fill="var(--gold)" opacity="0.4"/>
-              <circle cx="320" cy="36" r="14" fill="var(--gold)" opacity="0.6"/>
               <g fill="var(--gold)">
-                <rect x="20" y="56" width="320" height="3"/>
-                <rect x="285" y="52" width="50" height="7"/>
-                <rect x="295" y="38" width="30" height="14"/>
-                <polygon points="291,38 310,28 329,38"/>
-                <rect x="22" y="59" width="1.5" height="22"/>
-                <rect x="46" y="59" width="1.5" height="22"/>
-                <rect x="70" y="59" width="1.5" height="22"/>
-                <rect x="94" y="59" width="1.5" height="22"/>
-                <rect x="118" y="59" width="1.5" height="22"/>
-                <rect x="142" y="59" width="1.5" height="22"/>
-                <rect x="166" y="59" width="1.5" height="22"/>
-                <rect x="190" y="59" width="1.5" height="22"/>
-                <rect x="214" y="59" width="1.5" height="22"/>
-                <rect x="238" y="59" width="1.5" height="22"/>
-                <rect x="262" y="59" width="1.5" height="22"/>
-                <rect x="281" y="59" width="1.5" height="22"/>
-                <rect x="295" y="59" width="1.5" height="22"/>
-                <rect x="311" y="59" width="1.5" height="22"/>
-                <rect x="327" y="59" width="1.5" height="22"/>
+                <rect x="10" y="82" width="380" height="3"/>
+                <rect x="30" y="50" width="130" height="32"/>
+                <rect x="240" y="50" width="130" height="32"/>
+                <rect x="152" y="25" width="96" height="57"/>
+                <rect x="145" y="20" width="110" height="8"/>
+                <rect x="185" y="12" width="30" height="8"/>
+              </g>
+              <path d="M175 82 L175 55 Q200 32 225 55 L225 82Z" fill="var(--navy)" opacity="0.4"/>
+              <g fill="var(--navy)" opacity="0.2">
+                <rect x="45" y="58" width="6" height="18"/>
+                <rect x="65" y="58" width="6" height="18"/>
+                <rect x="85" y="58" width="6" height="18"/>
+                <rect x="105" y="58" width="6" height="18"/>
+                <rect x="125" y="58" width="6" height="18"/>
+                <rect x="255" y="58" width="6" height="18"/>
+                <rect x="275" y="58" width="6" height="18"/>
+                <rect x="295" y="58" width="6" height="18"/>
+                <rect x="315" y="58" width="6" height="18"/>
+                <rect x="335" y="58" width="6" height="18"/>
               </g>
             </svg>
           </div>
 
           <p className="font-serif text-2xl font-bold text-[var(--cream)] mt-2">
-            PLACEHOLDER_COMPLETION_CERTIFICATE_TITLE
+            Fifteen stops. Four blocks. Asbury Park, New Jersey.
           </p>
           <p className="font-mono text-[10px] tracking-widest text-[var(--gold)]
                         uppercase mt-2 opacity-70">
-            PLACEHOLDER_COMPLETION_CERTIFICATE_SUBTITLE
+            asbury-park-postcards.vercel.app
           </p>
           <p className="font-mono text-[11px] text-[var(--gold)] opacity-50 mt-3">
             Walked on {completeDate}
@@ -228,7 +195,7 @@ export default function PassportPage() {
 
           <p className="font-mono text-[9px] text-[var(--gold)] opacity-30
                         tracking-widest uppercase mt-5">
-            #AsburyParkPostmarks
+            #AsburyPark
           </p>
           <p className="font-mono text-[9px] text-[var(--gold)] opacity-20
                         tracking-widest uppercase mt-1">
@@ -240,16 +207,16 @@ export default function PassportPage() {
       {/* STAMP GRID */}
       <div className="max-w-lg mx-auto px-6 py-6">
 
-        {/* PLACEHOLDER_ROUTE_SECTION_A section */}
+        {/* BANGS AVE section */}
         <div className="flex items-center gap-3 mb-4">
           <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-60 uppercase whitespace-nowrap">
-            PLACEHOLDER_ROUTE_SECTION_A
+            BANGS AVE
           </p>
           <div className="flex-1 border-t border-dashed border-[var(--navy-mid)] opacity-30" />
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
-          {fifthStops.map(shop => (
+          {bangsStops.map(shop => (
             <StampCard
               key={shop.id}
               shop={shop}
@@ -264,21 +231,21 @@ export default function PassportPage() {
         <div className="flex items-center gap-3 my-5">
           <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
           <span className="font-mono text-[10px] text-[var(--gold)] tracking-widest px-2">
-            PLACEHOLDER_ROUTE_DIVIDER
+            → COOKMAN AVE
           </span>
           <div className="flex-1 h-px bg-[var(--gold)] opacity-40" />
         </div>
 
-        {/* PLACEHOLDER_ROUTE_SECTION_B section */}
+        {/* COOKMAN AVE section */}
         <div className="flex items-center gap-3 mb-4">
           <p className="font-mono text-[10px] tracking-widest text-[var(--navy-mid)] opacity-60 uppercase whitespace-nowrap">
-            PLACEHOLDER_ROUTE_SECTION_B
+            COOKMAN AVE
           </p>
           <div className="flex-1 border-t border-dashed border-[var(--navy-mid)] opacity-30" />
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          {thirdStops.map(shop => (
+          {cookmanStops.map(shop => (
             <StampCard
               key={shop.id}
               shop={shop}
@@ -291,17 +258,17 @@ export default function PassportPage() {
       </div>
 
       {/* COMPOSTELA — 10/10 completion */}
-      {coreStamped === 10 && (
+      {coreStamped === coreStops.length && (
         <div className="max-w-lg mx-auto px-6 pb-8">
           <div className="p-6 bg-[var(--navy)] border-2 border-[var(--gold)] rounded-sm text-center">
             <p className="text-3xl mb-2">⚓</p>
             <p className="font-serif text-xl font-bold text-[var(--gold)]">
-              PLACEHOLDER_COMPLETE_COLLECTION_BADGE_TITLE
+              Asbury Park Postmarks — Complete
             </p>
             <p className="font-serif italic text-sm text-[var(--cream)] mt-2 leading-relaxed">
-              PLACEHOLDER_COMPLETE_COLLECTION_COPY</p>
+              Fifteen stops. Four blocks. You walked the whole corridor.</p>
             <p className="font-mono text-[10px] text-[var(--gold)] opacity-50 mt-4 tracking-widest">
-              #AsburyParkPostmarks
+              #AsburyPark
             </p>
           </div>
         </div>

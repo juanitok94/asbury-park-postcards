@@ -37,9 +37,10 @@ export default async function Image({
   const headline = shop?.story?.headline ?? ''
 
   const zoneLabel: Record<string, string> = {
-    downtown: 'PLACEHOLDER_DOWNTOWN_LABEL',
+    bangs: 'Bangs Ave',
+    main: 'Main St',
+    cookman: 'Cookman Ave',
     boardwalk: 'Boardwalk',
-    'springwood-west-side': 'Springwood / West Side',
   }
 
   return new ImageResponse(
@@ -188,7 +189,7 @@ export default async function Image({
               display: 'flex',
             }}
           >
-            PLACEHOLDER_OG_FOOTER
+            Asbury Park, New Jersey
           </div>
         </div>
       </div>
