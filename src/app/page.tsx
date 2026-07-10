@@ -37,7 +37,9 @@ export default function Home() {
 
       <div className="max-w-2xl mx-auto px-6 py-10">
         <p className="font-serif text-lg leading-relaxed text-[var(--body-text)]">
-          PLACEHOLDER_INTRO_COPY
+          Convention Hall was designed by the architects of Grand Central Terminal.
+          It has outlasted most of what was built around it. Start on Bangs Avenue
+          and walk east until you reach it.
         </p>
 
         <Link
@@ -66,25 +68,11 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="bg-[var(--navy)] border-t-2 border-b-2 border-[var(--gold)] px-6 py-10">
-        <div className="max-w-2xl mx-auto">
-          <p className="font-mono text-[var(--gold)] text-[10px] tracking-[0.35em] uppercase mb-4">
-            Data Pending
-          </p>
-          <h2 className="font-serif text-2xl font-bold text-[var(--cream)] mb-5 leading-snug">
-            PLACEHOLDER_FEATURE_HEADING
-          </h2>
-          <p className="font-serif text-[var(--gold-light)] text-base leading-relaxed opacity-90">
-            PLACEHOLDER_FEATURE_COPY
-          </p>
-        </div>
-      </div>
-
       <RouteFilter />
 
       <div className="bg-[var(--navy)] px-6 py-8 text-center border-t-2 border-[var(--gold)]">
         <p className="font-serif italic text-[var(--gold)] text-sm opacity-70 leading-relaxed">
-          PLACEHOLDER_FOOTER_COPY
+          Fifteen stops. Four streets. One ocean.
         </p>
         <div className="mt-6 pt-6 border-t border-[var(--gold)]/20 max-w-md mx-auto">
           <p className="font-mono text-[10px] tracking-widest text-[var(--gold)] opacity-60 uppercase">
@@ -98,7 +86,7 @@ export default function Home() {
           </a>
         </div>
         <p className="font-mono text-[10px] text-[var(--gold)] opacity-40 tracking-widest mt-6">
-          #AsburyPark
+          #AsburyParkPostmarks
         </p>
       </div>
 
