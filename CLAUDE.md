@@ -251,3 +251,7 @@ Format: [date] - what failed - why - what to do instead.
 - 2026-07-09 - Previous session assumed mealtime-based filtering
   (Naples model). Asbury uses layer-based filtering with 7 content
   layers. RouteFilter.tsx was rewritten accordingly.
+- 2026-07-10 - OG image replaced. Source: "Boardwalk and Convention
+  Hall - Asbury Park, New Jersey, USA - October 3, 2023" by Giorgio
+  Galeotti, CC BY-SA 4.0, via Wikimedia Commons. Cropped to 1200x630,
+  quality 85, 194KB. Attribution in README.md Credits section.

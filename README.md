@@ -39,3 +39,7 @@ All business data lives in `/src/data/`.
 - Stops 14–15 (Wonder Bar, Stone Pony) are anchor stops with distinct editorial treatment.
 - 3 directory stops on Cookman Ave (Antique Emporium, House of Independents, Cookman Creamery).
 - Layer-based radio filter with coffee as default.
+
+## Credits
+
+- **OG image:** "Boardwalk and Convention Hall - Asbury Park, New Jersey, USA - October 3, 2023" by Giorgio Galeotti, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Boardwalk_and_Convention_Hall_-_Asbury_Park,_New_Jersey,_USA_-_October_3,_2023.jpg).
