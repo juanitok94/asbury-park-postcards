@@ -28,16 +28,16 @@
     "passportType": "core",
     "streetSide": "bangs",
     "selloColor": "#E8543F",
-    "hygge": false,
+    "hygge": true,
     "stamp": {
-      "welcomeLine": "PLACEHOLDER",
-      "subLine": "PLACEHOLDER"
+      "welcomeLine": "You made it to Café Volan.",
+      "subLine": "First postmark. The ocean is fifteen stops east."
     },
     "story": {
-      "headline": "PLACEHOLDER",
-      "body": "PLACEHOLDER",
-      "insiderTip": "",
-      "parkingNote": ""
+      "headline": "Hygge, on Bangs Avenue",
+      "body": "Volan is busy and somehow never feels it. The room holds more people than it should and still leaves you space to sit with a cappuccino and not be hurried. Danish has a word for this. Asbury Park has Volan.",
+      "insiderTip": "Get the bagel. Then stay longer than you meant to.",
+      "parkingNote": "PLACEHOLDER"
     },
     "offer": {
       "active": false,
@@ -83,14 +83,14 @@
     "selloColor": "#E8543F",
     "hygge": false,
     "stamp": {
-      "welcomeLine": "PLACEHOLDER",
-      "subLine": "PLACEHOLDER"
+      "welcomeLine": "You made it to Object Americana.",
+      "subLine": "Not everything on the rack is inventory."
     },
     "story": {
-      "headline": "PLACEHOLDER",
-      "body": "PLACEHOLDER",
-      "insiderTip": "",
-      "parkingNote": ""
+      "headline": "Some of it is not for sale",
+      "body": "Thomas Johnson is a designer, which explains the shop. Rare garments from the 1930s through the 1980s, vintage Levi’s, motorcycle gear with real miles on it. Some pieces have no price. They hold the room together, and he will tell you so, mellow about it, like it should be obvious.",
+      "insiderTip": "Ask him what he will not sell. That is the tour.",
+      "parkingNote": "PLACEHOLDER"
     },
     "offer": {
       "active": false,
@@ -134,16 +134,16 @@
     "passportType": "core",
     "streetSide": "bangs",
     "selloColor": "#E8543F",
-    "hygge": false,
+    "hygge": true,
     "stamp": {
-      "welcomeLine": "PLACEHOLDER",
-      "subLine": "PLACEHOLDER"
+      "welcomeLine": "You made it to Goldrush.",
+      "subLine": "Slower street, same coffee town."
     },
     "story": {
-      "headline": "PLACEHOLDER",
-      "body": "PLACEHOLDER",
-      "insiderTip": "",
-      "parkingNote": ""
+      "headline": "Quieter, two blocks up",
+      "body": "Goldrush runs at half the volume of Volan and takes the same care. Fewer people, more room. The kind of counter where nobody minds if you order juice instead of coffee, and nobody asks why.",
+      "insiderTip": "Come here when Volan is full. It is not a consolation prize.",
+      "parkingNote": "PLACEHOLDER"
     },
     "offer": {
       "active": false,
@@ -242,14 +242,14 @@
     "selloColor": "#E8543F",
     "hygge": false,
     "stamp": {
-      "welcomeLine": "PLACEHOLDER",
-      "subLine": "PLACEHOLDER"
+      "welcomeLine": "You made it to Funky Donkey.",
+      "subLine": "The railroad is behind you. Cookman Ave is ahead."
     },
     "story": {
-      "headline": "PLACEHOLDER",
-      "body": "PLACEHOLDER",
-      "insiderTip": "",
-      "parkingNote": ""
+      "headline": "The threshold",
+      "body": "Charlie runs a head shop on Main Street, which is one way to put it. It is also a record collection, a Grateful Dead argument, and a small business he opened after closing a cellphone store because the name came to him while listening to the Beastie Boys. Glass, pipes, tubes.",
+      "insiderTip": "Stop five is where Bangs ends and Cookman begins. Cross the tracks here.",
+      "parkingNote": "PLACEHOLDER"
     },
     "offer": {
       "active": false,
