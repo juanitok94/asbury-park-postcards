@@ -6,6 +6,7 @@ import Link from 'next/link'
 import shopsData from '@/data/shops.json'
 import triviaData from '@/data/trivia.json'
 import { getStamps, addStamp, recordStampDate, type StampRecord } from '@/lib/stamps'
+import { isOpenNow, nextChange } from '@/lib/hours'
 
 const shops = shopsData as any[]
 const trivia = triviaData as any[]
@@ -13,6 +14,31 @@ const trivia = triviaData as any[]
 const coreStops = shops
   .filter(s => s.passportType === 'core')
   .sort((a, b) => a.passportStop - b.passportStop)
+
+function OpenNowBadge({ hours }: { hours: any }) {
+  const [ready, setReady] = useState(false)
+  useEffect(() => { setReady(true) }, [])
+  if (!ready) return null
+
+  const now = new Date()
+  const open = isOpenNow(hours, now)
+
+  if (open) {
+    return (
+      <p className="font-mono text-[10px] tracking-widest mt-2">
+        <span style={{ color: 'var(--teal)' }}>●</span>
+        <span className="text-white/80 ml-1">Open now</span>
+      </p>
+    )
+  }
+
+  const change = nextChange(hours, now)
+  return (
+    <p className="font-mono text-[10px] tracking-widest text-white/40 mt-2">
+      Closed{change.time ? ` · opens ${change.time}` : ''}
+    </p>
+  )
+}
 
 const zoneLabel: Record<string, string> = {
   bangs: 'Bangs Ave',
@@ -125,6 +151,8 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
         <p className="font-mono text-xs text-white/60 mt-2">
           {shop.address}
         </p>
+
+        <OpenNowBadge hours={shop.hours} />
       </div>
 
       <div className="max-w-lg mx-auto px-6 py-8">
@@ -231,7 +259,7 @@ export default function StopPage({ params }: { params: Promise<{ slug: string }>
           <div className="flex flex-col gap-1">
             {dayOrder.map(day => {
               const val = shop.hours[day]
-              const closed = val?.toLowerCase() === 'closed'
+              const closed = val === null
               const today = new Date().toLocaleDateString(
                 'en-US', { weekday: 'short' }
               ).toLowerCase().slice(0, 3)
