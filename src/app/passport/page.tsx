@@ -1,6 +1,7 @@
 // /src/app/passport/page.tsx
 'use client'
 
+import { coreCountWord, resolveThreshold } from '@/lib/coreStops'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import shopsData from '@/data/shops.json'
@@ -55,12 +56,12 @@ export default function PassportPage() {
   const progress = Math.round((coreStamped / coreStops.length) * 100)
 
   const earnedBadges = badges.filter(
-    b => b.type === 'core' && coreStamped >= b.threshold
+    b => b.type === 'core' && coreStamped >= resolveThreshold(b.threshold)
   )
 
   const nextBadge = badges
-    .filter(b => b.type === 'core' && coreStamped < b.threshold)
-    .sort((a, b) => a.threshold - b.threshold)[0]
+    .filter(b => b.type === 'core' && coreStamped < resolveThreshold(b.threshold))
+    .sort((a, b) => resolveThreshold(a.threshold) - resolveThreshold(b.threshold))[0]
 
   return (
     <main className="min-h-screen bg-[var(--cream)] text-[var(--navy)]">
@@ -128,7 +129,7 @@ export default function PassportPage() {
       {nextBadge && (
         <div className="max-w-lg mx-auto px-6 pt-3">
           <p className="font-serif text-sm italic text-[var(--navy-mid)] opacity-70">
-            {nextBadge.threshold - coreStamped} more stamp{nextBadge.threshold - coreStamped !== 1 ? 's' : ''} to earn &ldquo;{nextBadge.label}&rdquo;
+            {resolveThreshold(nextBadge.threshold) - coreStamped} more stamp{resolveThreshold(nextBadge.threshold) - coreStamped !== 1 ? 's' : ''} to earn &ldquo;{nextBadge.label}&rdquo;
           </p>
         </div>
       )}
@@ -173,7 +174,7 @@ export default function PassportPage() {
           </div>
 
           <p className="font-serif text-2xl font-bold text-[var(--cream)] mt-2">
-            Fifteen stops. Four blocks. Asbury Park, New Jersey.
+            {coreCountWord} stops. Four blocks. Asbury Park, New Jersey.
           </p>
           <p className="font-mono text-[10px] tracking-widest text-[var(--gold)]
                         uppercase mt-2 opacity-70">
@@ -266,7 +267,7 @@ export default function PassportPage() {
               Asbury Park Postmarks — Complete
             </p>
             <p className="font-serif italic text-sm text-[var(--cream)] mt-2 leading-relaxed">
-              Fifteen stops. Four blocks. You walked the whole corridor.</p>
+              {coreCountWord} stops. Four blocks. You walked the whole corridor.</p>
             <p className="font-mono text-[10px] text-[var(--gold)] opacity-50 mt-4 tracking-widest">
               #AsburyPark
             </p>

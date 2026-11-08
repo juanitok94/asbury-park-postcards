@@ -677,6 +677,59 @@
     "lastVerified": "PLACEHOLDER"
   },
   {
+    "id": "transparent-clinch-gallery",
+    "name": "Transparent Clinch Gallery",
+    "address": "210 5th Ave",
+    "city": "Asbury Park",
+    "state": "NJ",
+    "zip": "07712",
+    "coordinates": [
+      0,
+      0
+    ],
+    "layers": [
+      "music"
+    ],
+    "zone": "boardwalk",
+    "hours": {
+      "mon": null,
+      "tue": null,
+      "wed": null,
+      "thu": "11:00-19:00",
+      "fri": "11:00-20:00",
+      "sat": "11:00-20:00",
+      "sun": "11:00-19:00",
+      "note": "Inside The Asbury Hotel lobby"
+    },
+    "passportStop": 14,
+    "passportType": "core",
+    "streetSide": "boardwalk",
+    "selloColor": "#E8543F",
+    "hygge": false,
+    "stamp": {
+      "welcomeLine": "PLACEHOLDER",
+      "subLine": "PLACEHOLDER"
+    },
+    "story": {
+      "headline": "PLACEHOLDER",
+      "body": "PLACEHOLDER",
+      "insiderTip": "",
+      "parkingNote": ""
+    },
+    "offer": {
+      "active": false,
+      "type": "verbal",
+      "text": "",
+      "reward": ""
+    },
+    "nearbyPassportStops": [],
+    "multiLayer": false,
+    "instagram": "transparentclinchgallery",
+    "website": "transparentclinchgallery.com",
+    "status": "placeholder",
+    "lastVerified": "PLACEHOLDER"
+  },
+  {
     "id": "wonder-bar",
     "name": "Wonder Bar",
     "address": "1213 Ocean Ave",
@@ -700,7 +753,7 @@
       "sat": "12:00-24:00",
       "sun": "12:00-24:00"
     },
-    "passportStop": 14,
+    "passportStop": 15,
     "passportType": "core",
     "streetSide": "boardwalk",
     "selloColor": "#E8543F",
@@ -753,7 +806,7 @@
       "sun": "12:00-17:00",
       "note": "Bar/box office hours — show times vary, see venue calendar"
     },
-    "passportStop": 15,
+    "passportStop": 16,
     "passportType": "core",
     "streetSide": "boardwalk",
     "selloColor": "#E8543F",

@@ -1,3 +1,4 @@
+import { coreCountWord } from '@/lib/coreStops'
 import type { Metadata } from 'next'
 import { Playfair_Display, Crimson_Pro, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
@@ -23,19 +24,21 @@ const ibmMono = IBM_Plex_Mono({
   display: 'swap',
 })
 
+const description = `${coreCountWord} stops from Bangs Ave to the Boardwalk. Collect postmarks as you walk Asbury Park.`
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://asbury-park-postcards.vercel.app'),
   title: 'Asbury Park Postmarks — A Strolling Guide',
-  description: 'Fifteen stops from Bangs Ave to the Boardwalk. Collect postmarks as you walk Asbury Park.',
+  description,
   openGraph: {
     title: 'Asbury Park Postmarks — A Strolling Guide',
-    description: 'Fifteen stops from Bangs Ave to the Boardwalk. Collect postmarks as you walk Asbury Park.',
+    description,
     images: [{ url: '/opengraph-image.jpg', width: 1200, height: 630, alt: 'Asbury Park Postmarks' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Asbury Park Postmarks — A Strolling Guide',
-    description: 'Fifteen stops from Bangs Ave to the Boardwalk. Collect postmarks as you walk Asbury Park.',
+    description,
     images: ['/opengraph-image.jpg'],
   },
 }

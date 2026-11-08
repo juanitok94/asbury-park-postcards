@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import shopsData from '@/data/shops.json'
+import { coreCount, coreCountWord } from '@/lib/coreStops'
 import RouteFilter from '@/components/RouteFilter'
 
 const shops = shopsData as any[]
-const coreCount = shops.filter(s => s.passportType === 'core').length
+
 
 export default function Home() {
   return (
@@ -72,7 +73,7 @@ export default function Home() {
 
       <div className="bg-[var(--navy)] px-6 py-8 text-center border-t-2 border-[var(--gold)]">
         <p className="font-serif italic text-[var(--gold)] text-sm opacity-70 leading-relaxed">
-          Fifteen stops. Four streets. One ocean.
+          {coreCountWord} stops. Four streets. One ocean.
         </p>
         <div className="mt-6 pt-6 border-t border-[var(--gold)]/20 max-w-md mx-auto">
           <p className="font-mono text-[10px] tracking-widest text-[var(--gold)] opacity-60 uppercase">

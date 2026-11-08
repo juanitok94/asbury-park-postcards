@@ -12,7 +12,7 @@
   {
     "id": "halfway",
     "label": "Halfway There",
-    "threshold": 8,
+    "threshold": "half",
     "type": "core",
     "icon": "½",
     "color": "#6F4E37",
@@ -22,11 +22,11 @@
   {
     "id": "complete-collection",
     "label": "Full Corridor",
-    "threshold": 15,
+    "threshold": "all",
     "type": "core",
     "icon": "AP",
     "color": "#10222F",
-    "description": "All fifteen postmarks collected — Bangs to Boardwalk",
+    "description": "All postmarks collected — Bangs to Boardwalk",
     "compostela": true
   }
 ]

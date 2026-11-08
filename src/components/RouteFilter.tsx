@@ -83,7 +83,7 @@ export default function RouteFilter() {
 
       {/* Filter pills */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {[{ id: 'all', label: 'All', icon: '15', color: '#10222F' }, ...layers].map((layer: any) => {
+        {[{ id: 'all', label: 'All', icon: String(allCoreStops.length), color: '#10222F' }, ...layers].map((layer: any) => {
           const active = activeFilter === layer.id
           return (
             <button

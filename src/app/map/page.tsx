@@ -1,6 +1,7 @@
 // /src/app/map/page.tsx
 'use client'
 
+import { coreCountWord } from '@/lib/coreStops'
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import shopsData from '@/data/shops.json'
@@ -89,7 +90,7 @@ export default function MapPage() {
           The Map
         </h1>
         <p className="text-[var(--gold)] text-sm italic mt-1 opacity-70">
-          Fifteen stops, west to east
+          {coreCountWord} stops, west to east
         </p>
       </div>
 
