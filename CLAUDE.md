@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 Asbury Park Postmarks is a mobile-first digital walking postcard
-collection for Asbury Park, NJ. 15 core stops, Bangs Ave to the
+collection for Asbury Park, NJ. 16 core stops, Bangs Ave to the
 Boardwalk, west to east. Users walk the corridor, collect
 postmarks at each stop, and finish at the Boardwalk.
 No auth, no login, no cookies, no PII. localStorage only.
@@ -25,8 +25,8 @@ npx tsc --noEmit   # Type-check without emitting (required before finishing any 
 No test suite exists. Manual review at localhost:3000 is the test process.
 
 ## Live URLs
-- Production: asbury-park-postcards.vercel.app (TBD)
-- Repo: github.com/juanitok94/asbury-park-postcards (TBD)
+- Production: asbury-park-postcards.vercel.app (live since July 2026)
+- Repo: github.com/juanitok94/asbury-park-postcards
 - Local: localhost:3000 (npm run dev)
 
 ## Tech Stack
@@ -71,7 +71,7 @@ Defined in globals.css as CSS custom properties:
 ## Journey Direction
 West to east. Bangs Ave first (stops 1–4), cross Main St
 (stop 5), Cookman Ave (stops 6–13), then east to the
-Boardwalk (stops 14–15). Convention Hall is the visual
+Boardwalk (stops 14–16). Convention Hall is the visual
 icon for the destination/completion.
 
 ## Convention Hall
@@ -79,7 +79,7 @@ Symbol of Asbury Park. The Convention Hall silhouette is
 the postcard collection's visual hero mark. Its SVG
 appears on the passport completion certificate.
 
-## The 15 Core Stops
+## The 16 Core Stops
 | # | Shop | Zone | Address | Layers |
 |---|------|------|---------|--------|
 | 1 | Café Volan | bangs | 510 Bangs Ave | coffee |
@@ -95,11 +95,13 @@ appears on the passport completion certificate.
 | 11 | TAKA | cookman | 660 Cookman Ave | food |
 | 12 | Confections of a Rockstar | cookman | 550 Cookman Ave | vices |
 | 13 | Asbury Park Brewery | cookman | 614 Cookman Ave | vices |
-| 14 | Wonder Bar | boardwalk | 1213 Ocean Ave | music |
-| 15 | Stone Pony | boardwalk | 913 Ocean Ave | music |
+| 14 | Transparent Clinch Gallery | boardwalk | 210 5th Ave | music |
+| 15 | Wonder Bar | boardwalk | 1213 Ocean Ave | music |
+| 16 | Stone Pony | boardwalk | 913 Ocean Ave | music |
 
-Stops 14–15 are anchor stops (Wonder Bar, Stone Pony).
-Their editorial copy uses ANCHOR_PLACEHOLDER — do not
+Stops 14–16 are the music anchors (Transparent Clinch Gallery,
+Wonder Bar, Stone Pony). Only Wonder Bar and Stone Pony use
+ANCHOR_PLACEHOLDER for their editorial copy — do not
 draft anchor stories without explicit approval.
 
 ## Directory Stops
@@ -129,7 +131,7 @@ Default filter: coffee. Music must follow coffee in order.
 | `"bangs"` | Bangs Avenue (west, stops 1–4) |
 | `"main"` | Main Street crossing (stop 5) |
 | `"cookman"` | Cookman Avenue corridor (stops 6–13) |
-| `"boardwalk"` | Boardwalk / Ocean Ave (stops 14–15) |
+| `"boardwalk"` | Boardwalk / Ocean Ave (stops 14–16) |
 
 ## File Structure
 src/
@@ -156,7 +158,7 @@ Key fields on each shop object:
 |-------|------|-------|
 | `id` | string | kebab-case slug, used in URL and image paths |
 | `passportType` | `"core"` \| `"directory"` | core = numbered passport stop |
-| `passportStop` | number \| null | 1–15, west-to-east order; null for directory |
+| `passportStop` | number \| null | 1–16, west-to-east order; null for directory |
 | `zone` | `"bangs"` \| `"main"` \| `"cookman"` \| `"boardwalk"` | which corridor segment |
 | `coordinates` | `[lon, lat]` | longitude first (not lat/lon) — currently `[0, 0]` placeholder |
 | `selloColor` | hex | per-shop accent color for stamp circles and headers |
@@ -202,13 +204,13 @@ Never call stamp functions outside `useEffect` or client components.
 
 ## Current Build Status (July 10, 2026)
 - ✅ Cloned from Naples golden master
-- ✅ shops.json rebuilt with 15 core + 3 directory Asbury stops
+- ✅ shops.json rebuilt with 16 core + 3 directory Asbury stops
 - ✅ layers.json: 7 content layers (coffee, music, vintage, records, books, food, vices)
-- ✅ badges.json: 3 badges retargeted to 15 stops
+- ✅ badges.json: 3 badges retargeted to 16 stops
 - ✅ globals.css: Asbury palette in place
 - ✅ layout.tsx: metadata updated for Asbury Park
 - ✅ map/page.tsx: 4-zone layout, west-to-east, layer filter
-- ✅ passport/page.tsx: Convention Hall SVG, 15-stop grid
+- ✅ passport/page.tsx: Convention Hall SVG, 16-stop grid
 - ✅ stop/[slug]/page.tsx: zone labels, dynamic stop count
 - ✅ stop/[slug]/opengraph-image.tsx: Asbury zones, raw hex for Satori
 - ✅ RouteFilter.tsx: layer-based radio filter, coffee default
@@ -220,11 +222,11 @@ Never call stamp functions outside `useEffect` or client components.
 - ⬜ Anchor stop copy (Wonder Bar, Stone Pony — ANCHOR_PLACEHOLDER)
 - ⬜ Homepage body copy (4 PLACEHOLDERs remain)
 - ⬜ trivia.json (needs Asbury-specific content)
-- ⬜ Real coordinates for all 18 stops
+- ⬜ Real coordinates for all 19 stops
 - ⬜ Real hours for all stops
 - ⬜ Shop photos (after photo walk)
-- ⬜ GitHub repo creation
-- ⬜ Vercel deployment
+- ✅ GitHub repo creation
+- ✅ Vercel deployment (live at https://asbury-park-postcards.vercel.app since July 2026)
 
 ## Photo Library
 Photos location: public/images/shops/
